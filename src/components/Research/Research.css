@@ -1,0 +1,1339 @@
+/* ==========================================================================
+   Research Section Stylesheet — Vishaal A K Cybersecurity Portfolio
+   ========================================================================== */
+
+.research-section {
+  position: relative;
+  padding: 5rem 1.5rem 5.5rem 1.5rem;
+  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
+  z-index: 10;
+  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(5, 7, 10, 0.95) 0%, rgba(10, 15, 20, 0.65) 50%, rgba(5, 7, 10, 0.95) 100%);
+}
+
+.research-crosshairs {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto 0.75rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  user-select: none;
+  opacity: 0.6;
+}
+
+.research-container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header
+   -------------------------------------------------------------------------- */
+.research-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 850px;
+}
+
+/* --------------------------------------------------------------------------
+   Terminal Window (ResearchTerminal.tsx)
+   -------------------------------------------------------------------------- */
+.research-terminal-window {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel);
+  transition: border-color var(--transition-normal);
+}
+
+.research-terminal-window:hover {
+  border-color: rgba(25, 196, 200, 0.3);
+}
+
+.research-term-header {
+  background-color: rgba(10, 15, 20, 0.98);
+  border-bottom: 1px solid var(--border-panel);
+  padding: 0.45rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.term-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.term-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+
+.term-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+  border-radius: var(--radius-xs);
+  color: var(--accent-primary);
+  transition: all var(--transition-fast);
+}
+
+.term-copy-btn:hover {
+  background: rgba(25, 196, 200, 0.18);
+}
+
+.research-term-body {
+  padding: 1rem 1.25rem;
+  background-color: rgba(5, 7, 10, 0.88);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+}
+
+.term-cmd-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.term-mt {
+  margin-top: 0.35rem;
+}
+
+.term-cmd-text {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.term-dir-listing {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding-left: 0.6rem;
+}
+
+.dir-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  padding: 2px 7px;
+  background: rgba(13, 21, 27, 0.7);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: var(--radius-xs);
+}
+
+.term-quote-output {
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin: 0.2rem 0;
+  padding-left: 0.6rem;
+}
+
+.quote-accent-bar {
+  width: 3px;
+  background: var(--accent-primary);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.profile-quote-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.term-philosophy-output {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.75rem;
+  background: rgba(25, 196, 200, 0.05);
+  border: 1px solid rgba(25, 196, 200, 0.18);
+  border-radius: var(--radius-xs);
+  margin-left: 0.6rem;
+}
+
+.philosophy-text {
+  font-size: 0.82rem;
+  color: var(--accent-secondary);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Current Research Role Card (ResearchCurrentRole.tsx)
+   -------------------------------------------------------------------------- */
+.research-current-card {
+  background-color: var(--bg-panel);
+  border: 1px solid rgba(25, 196, 200, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 25px rgba(25, 196, 200, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  transition: border-color var(--transition-normal);
+}
+
+.research-current-card:hover {
+  border-color: rgba(25, 196, 200, 0.55);
+}
+
+.current-role-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.current-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.current-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-primary);
+  padding: 2px 7px;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+  border-radius: var(--radius-xs);
+}
+
+.current-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 2px 6px;
+  background: rgba(25, 196, 200, 0.12);
+  border-radius: var(--radius-xs);
+}
+
+.current-date-tag {
+  font-size: 0.68rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.current-role-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.role-titles-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.current-role-title {
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.current-org-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+}
+
+.org-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.unit-name {
+  font-size: 0.72rem;
+}
+
+.current-overview {
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: var(--text-primary);
+}
+
+.current-scope-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scope-head {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.scope-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.scope-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.scope-prefix {
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+/* Research Status HUD */
+.research-status-hud {
+  background: rgba(5, 7, 10, 0.85);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.hud-badges-grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hud-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 3px 8px;
+  background: rgba(13, 21, 27, 0.9);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: var(--radius-xs);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.hud-label {
+  color: var(--text-secondary);
+}
+
+.status-dot-amber {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+}
+
+.text-amber {
+  color: #fbbf24;
+}
+
+.hud-disclaimer {
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  padding-top: 0.35rem;
+  border-top: 1px dashed rgba(230, 237, 243, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   Research Focus Areas Matrix (ResearchFocusMatrix.tsx)
+   -------------------------------------------------------------------------- */
+.research-focus-matrix-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.focus-matrix-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.focus-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.focus-legend {
+  font-size: 0.65rem;
+}
+
+.focus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.focus-card-btn {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.15rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.focus-card-btn:hover {
+  border-color: rgba(25, 196, 200, 0.35);
+  transform: translateY(-2px);
+}
+
+.focus-card-btn.focus-selected {
+  border-color: var(--accent-primary);
+  background: rgba(25, 196, 200, 0.07);
+  box-shadow: 0 0 20px rgba(25, 196, 200, 0.15);
+}
+
+.focus-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.focus-order {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.focus-status-badge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: var(--radius-xs);
+}
+
+.badge-active {
+  background: rgba(25, 196, 200, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+}
+
+.badge-exploring {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.focus-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.focus-area-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.focus-area-subtitle {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.focus-area-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.focus-topics-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.focus-tag {
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  background: rgba(5, 7, 10, 0.7);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+.focus-detail-callout {
+  background: rgba(25, 196, 200, 0.06);
+  border: 1px solid rgba(25, 196, 200, 0.35);
+  border-radius: var(--radius-xs);
+  padding: 0.9rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.detail-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.callout-heading {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.callout-status-tag {
+  font-size: 0.64rem;
+  color: var(--accent-primary);
+  margin-left: auto;
+}
+
+.callout-questions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.question-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.question-prefix {
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Shared Component Cards
+   -------------------------------------------------------------------------- */
+.research-engineering-wrapper,
+.research-system-wrapper,
+.research-archive-wrapper,
+.research-notebook-wrapper,
+.research-publications-wrapper,
+.research-toolchain-wrapper {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: border-color var(--transition-normal);
+}
+
+.research-engineering-wrapper:hover,
+.research-system-wrapper:hover,
+.research-archive-wrapper:hover,
+.research-notebook-wrapper:hover,
+.research-publications-wrapper:hover,
+.research-toolchain-wrapper:hover {
+  border-color: rgba(25, 196, 200, 0.3);
+}
+
+.engineering-header,
+.system-flow-header,
+.archive-header,
+.notebook-header,
+.publications-header,
+.toolchain-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.eng-title,
+.system-flow-title,
+.archive-title,
+.notebook-title,
+.pub-title,
+.toolchain-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.eng-badge,
+.system-flow-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 2px 7px;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-xs);
+}
+
+.eng-intro,
+.system-flow-overview {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Research to Engineering Flow (ResearchEngineeringFlow.tsx)
+   -------------------------------------------------------------------------- */
+.eng-pipeline-container {
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+}
+
+.eng-pipeline-stages {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 680px;
+}
+
+.eng-stage-btn {
+  background: rgba(13, 21, 27, 0.9);
+  border: 1px solid rgba(230, 237, 243, 0.1);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.eng-stage-btn:hover,
+.eng-stage-btn.stage-active {
+  border-color: var(--accent-primary);
+  background: rgba(25, 196, 200, 0.08);
+}
+
+.stage-step-num {
+  font-size: 0.6rem;
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.stage-step-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.stage-step-sub {
+  font-size: 0.6rem;
+  white-space: nowrap;
+}
+
+.eng-stage-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrow-v {
+  display: none;
+}
+
+.eng-detail-callout {
+  background: rgba(25, 196, 200, 0.06);
+  border: 1px solid rgba(25, 196, 200, 0.3);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.eng-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.eng-callout-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.eng-callout-sub {
+  font-size: 0.64rem;
+  margin-left: auto;
+}
+
+.eng-callout-desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Current Technical Research Context: XDR (ResearchSystemFlow.tsx)
+   -------------------------------------------------------------------------- */
+.system-flow-subhead {
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.system-pipeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  background: rgba(5, 7, 10, 0.6);
+  border: 1px solid rgba(230, 237, 243, 0.06);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem 1rem;
+}
+
+.system-pipeline-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.system-pipeline-flow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+}
+
+.system-flow-node-card {
+  background: rgba(13, 21, 27, 0.95);
+  border: 1px solid rgba(230, 237, 243, 0.1);
+  border-radius: var(--radius-xs);
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+  flex: 1;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.system-flow-node-card:hover,
+.system-flow-node-card.node-active {
+  border-color: var(--accent-primary);
+  background: rgba(25, 196, 200, 0.09);
+  transform: translateY(-1px);
+}
+
+.node-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.node-num {
+  font-size: 0.58rem;
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.node-title-text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.node-role-preview {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.system-flow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.system-step-callout {
+  background: rgba(25, 196, 200, 0.06);
+  border: 1px solid rgba(25, 196, 200, 0.3);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.step-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.step-callout-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.step-callout-status {
+  font-size: 0.62rem;
+  margin-left: auto;
+}
+
+.step-callout-role {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.system-highlights-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(230, 237, 243, 0.06);
+}
+
+.highlights-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.6rem;
+}
+
+.highlight-grid-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: rgba(5, 7, 10, 0.6);
+  border: 1px solid rgba(230, 237, 243, 0.06);
+  border-radius: var(--radius-xs);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.hl-prefix {
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Middle Grid: Digital Archive & Field Notebook (2 Columns)
+   -------------------------------------------------------------------------- */
+.research-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Research Archive (ResearchArchive.tsx) */
+.archive-main-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0.85rem;
+  align-items: stretch;
+  flex: 1;
+}
+
+.archive-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.archive-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.5rem 0.65rem;
+  background: rgba(13, 21, 27, 0.8);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-xs);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.archive-nav-btn:hover {
+  border-color: rgba(25, 196, 200, 0.3);
+}
+
+.archive-nav-btn.nav-active {
+  border-color: var(--accent-primary);
+  background: rgba(25, 196, 200, 0.1);
+}
+
+.nav-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.archive-order {
+  font-size: 0.62rem;
+  color: var(--accent-primary);
+}
+
+.archive-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.archive-badge-pill {
+  font-size: 0.54rem;
+  color: var(--text-muted);
+}
+
+.archive-details-panel {
+  background: rgba(5, 7, 10, 0.85);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.details-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.details-domain-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.details-status-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.details-overview {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.details-explorations-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.explorations-head {
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.explorations-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exploration-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+/* Research Notebook (ResearchNotebook.tsx) */
+.notebook-tabs-bar {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.notebook-tab-btn {
+  padding: 3px 8px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  background: rgba(13, 21, 27, 0.8);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.notebook-tab-btn:hover {
+  border-color: rgba(25, 196, 200, 0.3);
+  color: var(--text-primary);
+}
+
+.notebook-tab-btn.tab-active {
+  background: rgba(25, 196, 200, 0.12);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.notebook-notes-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-height: 330px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.notebook-note-card {
+  background: rgba(5, 7, 10, 0.85);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: var(--radius-xs);
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color var(--transition-fast);
+}
+
+.notebook-note-card:hover {
+  border-color: rgba(25, 196, 200, 0.3);
+}
+
+.note-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-topic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.note-date {
+  font-size: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.note-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.note-summary {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.note-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+.note-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.6rem;
+  padding: 1px 5px;
+  background: rgba(13, 21, 27, 0.9);
+  border: 1px solid rgba(230, 237, 243, 0.06);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Grid: Publications & Research Toolchain (2 Columns)
+   -------------------------------------------------------------------------- */
+.research-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Publications Empty State (Publications.tsx) */
+.publications-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 2.25rem 1.5rem;
+  background: rgba(5, 7, 10, 0.75);
+  border: 1px dashed rgba(25, 196, 200, 0.25);
+  border-radius: var(--radius-xs);
+  height: 100%;
+}
+
+.empty-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+}
+
+.empty-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.empty-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+  line-height: 1.45;
+}
+
+.empty-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 3px 8px;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+  border-radius: var(--radius-xs);
+}
+
+/* Toolchain Grid (ResearchStack.tsx) */
+.toolchain-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toolchain-group-card {
+  background: rgba(5, 7, 10, 0.75);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.toolchain-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.toolchain-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.toolchain-pill {
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  background: rgba(13, 21, 27, 0.9);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+}
+
+.eng-footer,
+.system-flow-footer,
+.archive-footer,
+.notebook-footer,
+.publications-footer,
+.toolchain-footer {
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(230, 237, 243, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .research-middle-grid,
+  .research-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .archive-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-section {
+    padding: 4rem 1.25rem 4.5rem 1.25rem;
+  }
+
+  .focus-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .system-pipeline-flow-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .system-flow-connector .arrow-h {
+    display: none;
+  }
+
+  .system-flow-connector .arrow-v {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .research-section {
+    padding: 3.5rem 0.9rem 4rem 0.9rem;
+  }
+
+  .research-crosshairs {
+    display: none;
+  }
+
+  .term-dir-listing {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .eng-pipeline-stages {
+    min-width: 480px;
+  }
+}

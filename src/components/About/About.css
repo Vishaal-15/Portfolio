@@ -1,0 +1,521 @@
+/* ==========================================================================
+   About Section Stylesheet — Vishaal A K Portfolio
+   ========================================================================== */
+
+.about-section {
+  position: relative;
+  padding: 4.5rem 1.5rem 5rem 1.5rem;
+  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
+  z-index: 10;
+  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(10, 15, 20, 0.4) 0%, rgba(5, 7, 10, 0.9) 100%);
+}
+
+.about-crosshairs {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto 0.75rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  user-select: none;
+  opacity: 0.6;
+}
+
+.about-container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* Section Header */
+.about-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 800px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  width: fit-content;
+  padding: 2px 8px;
+  background: rgba(25, 196, 200, 0.06);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-xs);
+}
+
+.section-main-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.section-subtext {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+/* Two-Column Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-left-col,
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Terminal Window (ProfileTerminal.tsx)
+   -------------------------------------------------------------------------- */
+.about-terminal-window {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel);
+  transition: border-color var(--transition-normal);
+  width: 100%;
+}
+
+.about-terminal-window:hover {
+  border-color: rgba(25, 196, 200, 0.28);
+}
+
+.about-terminal-header {
+  background-color: rgba(10, 15, 20, 0.96);
+  border-bottom: 1px solid var(--border-panel);
+  padding: 0.45rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.about-terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.about-terminal-tag {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-xs);
+}
+
+.about-terminal-body {
+  padding: 1rem 1.2rem;
+  background-color: rgba(5, 7, 10, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.terminal-command-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.about-narrative-output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0.25rem 0 0.25rem 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(25, 196, 200, 0.28);
+}
+
+.narrative-paragraph {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--text-primary);
+}
+
+.pwd-command-line {
+  margin-top: 0.35rem;
+}
+
+.about-pwd-output {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(25, 196, 200, 0.05);
+  border: 1px solid rgba(25, 196, 200, 0.18);
+  border-radius: var(--radius-xs);
+  font-size: 0.76rem;
+  width: fit-content;
+}
+
+.final-prompt-line {
+  margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Capabilities Preview Box (CapabilityPreview.tsx)
+   -------------------------------------------------------------------------- */
+.capabilities-preview-box {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color var(--transition-normal);
+}
+
+.capabilities-preview-box:hover {
+  border-color: rgba(25, 196, 200, 0.28);
+}
+
+.capabilities-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.capabilities-count-tag {
+  font-size: 0.65rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.capability-card {
+  background-color: rgba(5, 7, 10, 0.65);
+  border: 1px solid rgba(230, 237, 243, 0.07);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.capability-card:hover {
+  border-color: rgba(25, 196, 200, 0.35);
+  background-color: rgba(25, 196, 200, 0.05);
+  transform: translateY(-1.5px);
+}
+
+.capability-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.capability-slug {
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.capability-description {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Profile Metadata & Dossier (ProfileMetadata.tsx)
+   -------------------------------------------------------------------------- */
+.profile-metadata-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.dossier-card {
+  background-color: var(--bg-panel);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color var(--transition-normal);
+}
+
+.dossier-card:hover {
+  border-color: rgba(25, 196, 200, 0.35);
+}
+
+.dossier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.dossier-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+.dossier-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1px 6px;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+  border-radius: var(--radius-xs);
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+
+.dossier-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dossier-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.research-field {
+  background: rgba(25, 196, 200, 0.04);
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--radius-xs);
+  border-left: 2px solid var(--accent-primary);
+}
+
+.field-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.field-label {
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+}
+
+.field-value {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.field-badge {
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  background: rgba(13, 21, 27, 0.9);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+}
+
+.field-tags-inline {
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+/* Attributes Matrix Card */
+.attributes-matrix-card {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.15rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color var(--transition-normal);
+}
+
+.attributes-matrix-card:hover {
+  border-color: rgba(25, 196, 200, 0.25);
+}
+
+.attributes-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.attributes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.attribute-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.4rem;
+  background: rgba(5, 7, 10, 0.5);
+  border: 1px solid rgba(230, 237, 243, 0.05);
+  border-radius: var(--radius-xs);
+  font-size: 0.68rem;
+}
+
+.attribute-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.mini-dot {
+  width: 5px;
+  height: 5px;
+}
+
+.attribute-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   Philosophy Card (PhilosophyCard.tsx)
+   -------------------------------------------------------------------------- */
+.philosophy-card {
+  background-color: var(--bg-panel);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color var(--transition-normal);
+}
+
+.philosophy-card:hover {
+  border-color: rgba(25, 196, 200, 0.35);
+}
+
+.philosophy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.philosophy-sparkle {
+  opacity: 0.75;
+}
+
+.philosophy-body {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.philosophy-quote-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.8;
+}
+
+.philosophy-quote {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.philosophy-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--border-panel);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 3.5rem 1rem 4rem 1rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-main-title {
+    font-size: 1.65rem;
+  }
+
+  .about-crosshairs {
+    display: none;
+  }
+}

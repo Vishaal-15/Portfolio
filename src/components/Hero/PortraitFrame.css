@@ -1,0 +1,211 @@
+/* Portrait Frame Stylesheet */
+
+.portrait-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.portrait-container {
+  background-color: var(--bg-panel);
+  border: 1px solid rgba(25, 196, 200, 0.2);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(25, 196, 200, 0.08);
+  overflow: hidden;
+  position: relative;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.portrait-container:hover {
+  border-color: rgba(25, 196, 200, 0.35);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.9), 0 0 24px rgba(25, 196, 200, 0.14);
+}
+
+/* Header */
+.portrait-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.75rem;
+  background-color: rgba(10, 15, 20, 0.96);
+  border-bottom: 1px solid var(--border-panel);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.portrait-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.portrait-header-icon {
+  color: var(--accent-primary);
+}
+
+.portrait-id-tag {
+  color: var(--text-muted);
+  font-size: 0.64rem;
+}
+
+/* Media Box */
+.portrait-media-box {
+  position: relative;
+  width: 100%;
+  background-color: #030508;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 4.4;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  filter: contrast(1.04) brightness(0.98);
+  transition: transform var(--transition-smooth);
+}
+
+.portrait-container:hover .portrait-image {
+  transform: scale(1.015);
+}
+
+/* Corner HUD Data Markers */
+.portrait-corner-marker {
+  position: absolute;
+  font-size: 0.6rem;
+  color: rgba(93, 224, 221, 0.65);
+  background: rgba(5, 7, 10, 0.75);
+  padding: 2px 5px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.portrait-corner-marker.top-left {
+  top: 6px;
+  left: 6px;
+  border-left: 1.5px solid var(--accent-primary);
+}
+
+.portrait-corner-marker.top-right {
+  top: 6px;
+  right: 6px;
+  border-right: 1.5px solid var(--accent-primary);
+}
+
+/* Scanning Beam Animation */
+@keyframes scanningBeam {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    top: 102%;
+    opacity: 0;
+  }
+}
+
+.portrait-scanline-beam {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(25, 196, 200, 0.4) 20%,
+    rgba(93, 224, 221, 0.95) 50%,
+    rgba(25, 196, 200, 0.4) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(25, 196, 200, 0.8), 0 0 20px rgba(25, 196, 200, 0.4);
+  pointer-events: none;
+  z-index: 3;
+  animation: scanningBeam 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Subtle texture overlay */
+.portrait-texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.12) 51%
+  );
+  background-size: 100% 3px;
+  opacity: 0.4;
+}
+
+/* Footer Telemetry */
+.portrait-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.75rem;
+  background-color: rgba(10, 15, 20, 0.96);
+  border-top: 1px solid var(--border-panel);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-status-val {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 600;
+}
+
+.inline-icon {
+  color: var(--accent-primary);
+}
+
+.footer-status-divider {
+  width: 1px;
+  height: 10px;
+  background-color: var(--border-panel);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .portrait-wrapper {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait-wrapper {
+    max-width: 100%;
+  }
+  .portrait-footer .env-tag {
+    display: none;
+  }
+}
