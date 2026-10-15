@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
         {/* Left Column: Greeting, Name, Subtitle, Bio & Direct Action Buttons */}
         <div className="hero-left-column">
           <div className="hero-greeting font-mono">
-            &gt; 起動完了 // SECURITY_RESEARCHER :: ACTIVE
+            &gt; SECURITY_RESEARCHER :: ACTIVE
           </div>
 
           <h1 className="hero-name">
