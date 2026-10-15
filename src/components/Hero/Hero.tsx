@@ -8,20 +8,16 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="hero-section" aria-label="Professional Profile Hero">
       <div className="hero-container">
-        {/* Left Column: Greeting, Name, Subtitle, Bio & Direct Action Buttons */}
+        {/* Left Column: Name, Subtitle, Bio & Direct Action Buttons */}
         <div className="hero-left-column">
-          <div className="hero-greeting font-mono">
-            &gt; SECURITY_RESEARCHER :: ACTIVE
-          </div>
-
           <h1 className="hero-name">
             <span className="hero-gradient-name">{PORTFOLIO_DATA.name}</span>
           </h1>
 
           <h2 className="hero-subtitle font-mono">
-            <Terminal size={20} className="hero-sub-icon text-accent" />
-            <span>Cybersecurity Researcher &amp;</span>
             <Shield size={20} className="hero-sub-icon text-accent" />
+            <span>Cybersecurity &amp;</span>
+            <Terminal size={20} className="hero-sub-icon text-accent" />
             <span>Software Developer</span>
           </h2>
 
