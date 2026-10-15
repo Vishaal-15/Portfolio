@@ -1,0 +1,149 @@
+/* Academic Summary Card Stylesheet */
+
+.academic-summary-card {
+  width: 100%;
+  background: var(--bg-panel-glass);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel);
+  transition: border-color var(--transition-normal);
+}
+
+.academic-summary-card:hover {
+  border-color: var(--accent-border);
+}
+
+.summary-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background-color: rgba(5, 7, 10, 0.6);
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+}
+
+.applicant-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  background: rgba(25, 196, 200, 0.08);
+  border: 1px solid rgba(25, 196, 200, 0.3);
+  border-radius: 9999px;
+  color: var(--accent-primary);
+  letter-spacing: 0.04em;
+}
+
+.summary-card-body {
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary-headline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.summary-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.academic-credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(230, 237, 243, 0.06);
+}
+
+@media (max-width: 640px) {
+  .academic-credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cred-item {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  padding: 0.5rem 0.65rem;
+  background: rgba(13, 21, 27, 0.45);
+  border: 1px solid rgba(230, 237, 243, 0.05);
+  border-radius: var(--radius-xs);
+}
+
+.cred-icon-box {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.cred-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cred-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.cred-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.cred-sub {
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
+
+.summary-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 0.25rem;
+}
+
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  background: rgba(230, 237, 243, 0.03);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+}
+
+.badge-chip:hover {
+  color: var(--accent-secondary);
+  border-color: var(--accent-border);
+}

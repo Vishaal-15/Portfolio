@@ -9,10 +9,10 @@ import './About.css';
 export const About: React.FC = () => {
   return (
     <section id="about" className="about-section" aria-label="About Vishaal A K">
-      {/* Section Ambient Watermark / Technical Tag */}
+      {/* Section Ambient Banner */}
       <div className="about-crosshairs font-mono" aria-hidden="true">
-        <span className="crosshair-tag top-left">// DOSSIER: VAK-CSE-RESEARCH</span>
-        <span className="crosshair-tag top-right">CLEARANCE: RESEARCH_INTERN</span>
+        <span className="crosshair-tag top-left">// BACKGROUND: B.E. COMPUTER SCIENCE &amp; ENGINEERING</span>
+        <span className="crosshair-tag top-right">SPECIALIZATION: CYBERSECURITY &amp; DISTRIBUTED SYSTEMS</span>
       </div>
 
       <div className="about-container">
@@ -20,16 +20,16 @@ export const About: React.FC = () => {
         <div className="about-section-header">
           <div className="section-badge font-mono">
             <ShieldCheck size={12} className="text-accent" />
-            <span>01. SECURITY RESEARCH PROFILE</span>
+            <span>01. ABOUT &amp; TECHNICAL FOUNDATIONS</span>
           </div>
 
           <h2 className="section-main-title">
-            Professional Overview <span className="text-accent">&amp;</span> Lab Research
+            Academic Foundations <span className="text-accent">&amp;</span> Lab Research
           </h2>
 
           <div className="section-subtext font-mono">
             <Cpu size={12} className="inline-icon text-accent" />
-            <span>ACADEMIC FOUNDATION • REAL-TIME DETECTION • SECURE ENGINEERING ARCHITECTURES</span>
+            <span>UNDERGRADUATE PREPARATION • REAL-TIME TELEMETRY • DEFENSIVE SYSTEMS ARCHITECTURE</span>
           </div>
         </div>
 

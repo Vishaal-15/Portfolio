@@ -68,6 +68,7 @@ html {
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -78,6 +79,21 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   position: relative;
+  width: 100%;
+}
+
+/* Touch responsiveness improvements */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Smooth touch scrolling */
+.xdr-diagram-scroll-container,
+.pipeline-stream-container,
+.modal-scroll-body,
+.mobile-nav-drawer {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Subtle Technical Ambient Grid Background */

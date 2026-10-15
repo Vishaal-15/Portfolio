@@ -55,31 +55,42 @@
   color: var(--accent-primary);
 }
 
-/* Meta Grid */
-.sec-meta-grid {
+/* Empirical Metrics Grid */
+.sec-metrics-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.4rem;
-  padding: 0.45rem 0;
+  gap: 0.5rem;
+  padding: 0.55rem 0;
   border-bottom: 1px solid var(--border-panel);
 }
 
-.meta-cell {
+.metric-box {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  padding: 0.45rem 0.55rem;
+  background-color: rgba(5, 7, 10, 0.55);
+  border: 1px solid rgba(230, 237, 243, 0.05);
+  border-radius: var(--radius-xs);
 }
 
-.meta-label {
-  font-size: 0.58rem;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
+.metric-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.meta-value {
-  font-size: 0.68rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+.metric-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+}
+
+.metric-context {
+  font-size: 0.55rem;
+  line-height: 1.2;
 }
 
 /* Focus Section */

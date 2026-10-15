@@ -1,40 +1,32 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { FileText, FolderGit2 } from 'lucide-react';
+import { BookOpen, Award, CheckCircle2 } from 'lucide-react';
 
 export const ProfileTerminal: React.FC = () => {
-  const { terminalUser, systemHost, about } = PORTFOLIO_DATA;
+  const { about, academicProfile } = PORTFOLIO_DATA;
 
   return (
-    <div className="about-terminal-window technical-bracket font-mono" aria-label="About Terminal Profile">
+    <div className="about-terminal-window technical-bracket" aria-label="Academic Research Profile">
       {/* Title Bar */}
-      <div className="about-terminal-header">
-        <div className="terminal-controls" aria-hidden="true">
-          <span className="dot dot-close" />
-          <span className="dot dot-minimize" />
-          <span className="dot dot-expand" />
-        </div>
+      <div className="about-terminal-header font-mono">
         <div className="about-terminal-title">
-          <FileText size={13} className="terminal-icon" />
-          <span>about.txt — {terminalUser}@{systemHost}</span>
+          <BookOpen size={14} className="text-accent inline-icon" />
+          <span>ACADEMIC &amp; TECHNICAL BACKGROUND</span>
         </div>
         <div className="about-terminal-tag">
-          <span>READ_ONLY</span>
+          <Award size={12} className="text-accent inline-icon" />
+          <span>SECURITY INTERN</span>
         </div>
       </div>
 
-      {/* Terminal Content */}
+      {/* Narrative Body */}
       <div className="about-terminal-body">
-        {/* Command: cat about.txt */}
-        <div className="terminal-command-line">
-          <span className="prompt-user">{terminalUser}@{systemHost}</span>
-          <span className="prompt-separator">:</span>
-          <span className="prompt-path">~</span>
-          <span className="prompt-char">$</span>
-          <span className="terminal-cmd">{about.command}</span>
+        {/* Academic Overview Header */}
+        <div className="about-narrative-intro font-mono">
+          <span className="text-accent">// BACKGROUND &amp; FOCUS:</span>
         </div>
 
-        {/* Narrative Output */}
+        {/* Narrative Paragraphs */}
         <div className="about-narrative-output">
           {about.paragraphs.map((para, index) => (
             <p key={index} className="narrative-paragraph">
@@ -43,28 +35,22 @@ export const ProfileTerminal: React.FC = () => {
           ))}
         </div>
 
-        {/* Command: pwd */}
-        <div className="terminal-command-line pwd-command-line">
-          <span className="prompt-user">{terminalUser}@{systemHost}</span>
-          <span className="prompt-separator">:</span>
-          <span className="prompt-path">~</span>
-          <span className="prompt-char">$</span>
-          <span className="terminal-cmd">{about.pwdCommand}</span>
-        </div>
-
-        {/* pwd Output */}
-        <div className="about-pwd-output">
-          <FolderGit2 size={13} className="text-accent inline-icon" />
-          <span className="text-accent-secondary">{about.pwdOutput}</span>
-        </div>
-
-        {/* Blinking Cursor Prompt */}
-        <div className="terminal-command-line final-prompt-line">
-          <span className="prompt-user">{terminalUser}@{systemHost}</span>
-          <span className="prompt-separator">:</span>
-          <span className="prompt-path">~</span>
-          <span className="prompt-char">$</span>
-          <span className="cursor-blink" />
+        {/* Academic Coursework & Foundations Highlights */}
+        <div className="about-coursework-section font-mono">
+          <div className="coursework-header">
+            <span className="text-accent">// UNDERGRADUATE FOUNDATIONS &amp; RELEVANT COURSEWORK:</span>
+          </div>
+          <div className="coursework-grid">
+            {academicProfile.coursework.map((course) => (
+              <div key={course.title} className="coursework-item">
+                <div className="coursework-head">
+                  <CheckCircle2 size={11} className="text-accent inline-icon" />
+                  <span className="coursework-title">{course.title}</span>
+                </div>
+                <span className="coursework-relevance text-muted font-sans">{course.relevance}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

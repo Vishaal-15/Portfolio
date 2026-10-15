@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { Terminal, Shield, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { Layers, Shield, CheckCircle2, FlaskConical, Network, Globe } from 'lucide-react';
 
 interface ExperienceTerminalHeaderProps {
   filterMode: 'all' | 'security';
@@ -11,65 +10,47 @@ export const ExperienceTerminalHeader: React.FC<ExperienceTerminalHeaderProps> =
   filterMode,
   onFilterChange
 }) => {
-  const expData = PORTFOLIO_DATA.experience;
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyCmd = () => {
-    navigator.clipboard.writeText(filterMode === 'all' ? expData.command : expData.filterCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-
   return (
-    <div className="experience-terminal-window technical-bracket" aria-label="Terminal Experience Log">
-      {/* Terminal Bar */}
+    <div className="experience-terminal-window technical-bracket" aria-label="Experience Overview & Filters">
+      {/* Header Bar */}
       <div className="experience-terminal-header font-mono">
         <div className="terminal-header-title">
-          <Terminal size={13} className="text-accent" />
-          <span>sec-lab: ~/logs/experience.log</span>
+          <Layers size={14} className="text-accent" />
+          <span>RESEARCH INTERNSHIPS &amp; INDUSTRIAL EXPERIENCE</span>
         </div>
         <div className="terminal-header-status">
           <span className="pulse-dot" aria-hidden="true" />
-          <span className="text-accent">LOG_STREAM_VERIFIED</span>
+          <span className="text-accent">3 VERIFIED ROLES</span>
         </div>
       </div>
 
-      {/* Terminal Body */}
+      {/* Summary Body */}
       <div className="experience-terminal-body font-mono">
-        {/* Command 1: cat experience.log */}
-        <div className="terminal-log-line">
-          <span className="text-accent">vishaal@sec-lab:~$</span>
-          <span className="terminal-cmd-text">{expData.command}</span>
-          <button
-            type="button"
-            className="terminal-copy-btn"
-            onClick={handleCopyCmd}
-            title="Copy command"
-            aria-label="Copy terminal command"
-          >
-            {copied ? 'COPIED' : 'COPY'}
-          </button>
-        </div>
-
-        {/* Output */}
-        <div className="terminal-log-output">
-          <div className="log-loading-text text-muted">
-            <span className="loading-spinner" aria-hidden="true">⠋</span> {expData.loadingText}
+        {/* Academic / Research Scope Overview */}
+        <div className="experience-scope-row">
+          <div className="scope-item">
+            <FlaskConical size={13} className="text-accent inline-icon" />
+            <span className="scope-name">VIT-AP CoE:</span>
+            <span className="scope-desc text-muted">Agentic SOC Telemetry &amp; Automated Incident Triage</span>
           </div>
-          <div className="log-records-found">
-            <span className="records-count text-accent">{expData.recordsCount}</span>
-            <span className="records-status font-bold">
-              <CheckCircle2 size={12} className="inline-icon text-accent" /> {expData.verifiedStatus}
-            </span>
+          <div className="scope-item">
+            <Network size={13} className="text-accent inline-icon" />
+            <span className="scope-name">Juniper Networks:</span>
+            <span className="scope-desc text-muted">BGP / OSPF Protocols &amp; Virtual Topologies</span>
+          </div>
+          <div className="scope-item">
+            <Globe size={13} className="text-accent inline-icon" />
+            <span className="scope-name">MotionCut:</span>
+            <span className="scope-desc text-muted">Frontend Performance Profiling (~30% Speedup)</span>
           </div>
         </div>
 
-        {/* Interactive Filter Bar */}
+        {/* Filter Toolbar */}
         <div className="terminal-filter-toolbar">
           <div className="filter-prompt">
-            <span className="text-accent">vishaal@sec-lab:~$</span>
+            <CheckCircle2 size={13} className="text-accent inline-icon" />
             <span className="filter-command-label">
-              {filterMode === 'security' ? expData.filterCommand : 'cat experience.log --all'}
+              FILTER PERSPECTIVE:
             </span>
           </div>
 
@@ -80,8 +61,8 @@ export const ExperienceTerminalHeader: React.FC<ExperienceTerminalHeaderProps> =
               onClick={() => onFilterChange('all')}
               aria-pressed={filterMode === 'all'}
             >
-              <Terminal size={11} />
-              <span>SHOW ALL [3]</span>
+              <Layers size={12} />
+              <span>ALL APPOINTMENTS [3]</span>
             </button>
 
             <button
@@ -90,8 +71,8 @@ export const ExperienceTerminalHeader: React.FC<ExperienceTerminalHeaderProps> =
               onClick={() => onFilterChange('security')}
               aria-pressed={filterMode === 'security'}
             >
-              <Shield size={11} />
-              <span>SECURITY FOCUS</span>
+              <Shield size={12} />
+              <span>RESEARCH &amp; SYSTEMS FOCUS</span>
             </button>
           </div>
         </div>

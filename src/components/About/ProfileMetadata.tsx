@@ -1,40 +1,62 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { ShieldCheck, UserCheck, GraduationCap, Building2, FlaskConical, MapPin, Target, Activity } from 'lucide-react';
+import { BookOpen, UserCheck, GraduationCap, Building2, FlaskConical, MapPin, Target, Activity } from 'lucide-react';
 
 export const ProfileMetadata: React.FC = () => {
-  const { currentPosition, degree, institution, currentYear, location, researchLab, about } = PORTFOLIO_DATA;
+  const { degree, institution, currentYear, location, researchLab, about } = PORTFOLIO_DATA;
 
   return (
     <div className="profile-metadata-container">
-      {/* Primary Dossier Card */}
-      <div className="dossier-card technical-bracket font-mono" aria-label="Security Profile Dossier">
+      {/* Profile Overview Card */}
+      <div className="dossier-card technical-bracket font-mono" aria-label="Profile Overview">
         {/* Card Header */}
         <div className="dossier-header">
           <div className="dossier-header-title">
-            <ShieldCheck size={14} className="text-accent" />
-            <span>SECURITY DOSSIER // VAK-01</span>
+            <BookOpen size={14} className="text-accent" />
+            <span>PROFILE OVERVIEW</span>
           </div>
           <div className="dossier-status-pill">
             <span className="pulse-dot" />
-            <span className="text-accent">VERIFIED</span>
+            <span className="text-accent">ACTIVE</span>
           </div>
         </div>
 
         {/* Metadata List */}
         <div className="dossier-fields-list">
-          {/* Field: Role */}
+          {/* Current Role */}
           <div className="dossier-field">
             <div className="field-label-group">
               <UserCheck size={12} className="field-icon text-accent" />
-              <span className="field-label text-muted">ROLE</span>
+              <span className="field-label text-muted">CURRENT ROLE</span>
             </div>
             <div className="field-value font-sans font-semibold text-primary">
-              {currentPosition}
+              Security Research Intern
             </div>
           </div>
 
-          {/* Field: Education */}
+          {/* Research Lab */}
+          <div className="dossier-field research-field">
+            <div className="field-label-group">
+              <FlaskConical size={12} className="field-icon text-accent" />
+              <span className="field-label text-muted">AFFILIATION</span>
+            </div>
+            <div className="field-value font-sans text-accent-secondary">
+              {researchLab}
+            </div>
+          </div>
+
+          {/* Primary Focus */}
+          <div className="dossier-field">
+            <div className="field-label-group">
+              <Target size={12} className="field-icon text-accent" />
+              <span className="field-label text-muted">CORE DOMAINS</span>
+            </div>
+            <div className="field-value font-sans font-semibold text-accent">
+              Cybersecurity, Distributed Systems &amp; Machine Learning
+            </div>
+          </div>
+
+          {/* Undergrad Education */}
           <div className="dossier-field">
             <div className="field-label-group">
               <GraduationCap size={12} className="field-icon text-accent" />
@@ -46,7 +68,7 @@ export const ProfileMetadata: React.FC = () => {
             </div>
           </div>
 
-          {/* Field: Institution */}
+          {/* Institution */}
           <div className="dossier-field">
             <div className="field-label-group">
               <Building2 size={12} className="field-icon text-accent" />
@@ -57,18 +79,7 @@ export const ProfileMetadata: React.FC = () => {
             </div>
           </div>
 
-          {/* Field: Research Lab */}
-          <div className="dossier-field research-field">
-            <div className="field-label-group">
-              <FlaskConical size={12} className="field-icon text-accent" />
-              <span className="field-label text-muted">RESEARCH AFFILIATION</span>
-            </div>
-            <div className="field-value font-sans text-accent-secondary">
-              {researchLab}
-            </div>
-          </div>
-
-          {/* Field: Location */}
+          {/* Location */}
           <div className="dossier-field">
             <div className="field-label-group">
               <MapPin size={12} className="field-icon text-accent" />
@@ -78,25 +89,14 @@ export const ProfileMetadata: React.FC = () => {
               {location}
             </div>
           </div>
-
-          {/* Field: Focus Domains */}
-          <div className="dossier-field">
-            <div className="field-label-group">
-              <Target size={12} className="field-icon text-accent" />
-              <span className="field-label text-muted">CORE FOCUS</span>
-            </div>
-            <div className="field-value font-mono text-secondary field-tags-inline">
-              Cybersecurity • Secure Systems • ML • Backend Engineering • Network Security
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Security Attributes Matrix Card */}
-      <div className="attributes-matrix-card technical-bracket font-mono" aria-label="Security Attributes Matrix">
+      {/* Engineering Principles Matrix Card */}
+      <div className="attributes-matrix-card technical-bracket font-mono" aria-label="Engineering Principles Matrix">
         <div className="attributes-header">
           <Activity size={13} className="text-accent" />
-          <span className="attributes-title">// ENGINEERING PRINCIPLES</span>
+          <span className="attributes-title">// ENGINEERING &amp; SYSTEMS PRINCIPLES</span>
         </div>
         <div className="attributes-list">
           {about.securityAttributes.map((attr) => (

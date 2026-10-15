@@ -12,9 +12,9 @@ interface NodeDetail {
 const NODE_DETAILS: Record<string, NodeDetail> = {
   endpoints: {
     id: 'endpoints',
-    title: '100,000+ Endpoints',
-    role: 'Distributed agents generating system call, auth, & process events',
-    tech: 'Scale-Tested Simulation'
+    title: 'Distributed Endpoints',
+    role: 'Simulated endpoints generating system call, auth, & process events',
+    tech: 'Distributed Agent Simulation'
   },
   telemetry: {
     id: 'telemetry',
@@ -71,12 +71,12 @@ export const XDRArchitecture: React.FC = () => {
   const socStatus = PORTFOLIO_DATA.experience.socStatusItems;
 
   return (
-    <div className="xdr-architecture-wrapper" aria-label="VIT-AP XDR Platform Architecture">
+    <div className="xdr-architecture-wrapper" aria-label="VIT-AP Agentic SOC Platform Architecture">
       {/* Architecture Header & Legend */}
       <div className="xdr-arch-header">
         <div className="xdr-arch-title font-mono">
           <Activity size={14} className="text-accent" />
-          <span>XDR SYSTEM ARCHITECTURE · DATA FLOW SPECIFICATION</span>
+          <span>AGENTIC SOC ARCHITECTURE · DATA FLOW SPECIFICATION</span>
         </div>
         <div className="xdr-arch-badge font-mono">
           <span>HIGH-PERFORMANCE INGEST</span>
@@ -112,7 +112,7 @@ export const XDRArchitecture: React.FC = () => {
               <div className="arch-node-icon"><Server size={14} /></div>
               <div className="arch-node-content">
                 <span className="arch-node-title font-mono">01. ENDPOINTS</span>
-                <span className="arch-node-sub font-mono">100,000+ Scale Test</span>
+                <span className="arch-node-sub font-mono">Distributed Telemetry</span>
               </div>
             </button>
             <div className="arch-connector-down" aria-hidden="true">

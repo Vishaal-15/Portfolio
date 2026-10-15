@@ -1,98 +1,57 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { TerminalIntro } from './TerminalIntro';
 import { PortraitFrame } from './PortraitFrame';
-import { SecurityStatus } from './SecurityStatus';
-import { CTAButtons } from './CTAButtons';
-import { SystemIndicator } from '../Common/SystemIndicator';
-import { Shield, Lock, Terminal } from 'lucide-react';
+import { Terminal, Shield, Cpu, Download } from 'lucide-react';
 import './Hero.css';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="hero-section" aria-label="Hero Section">
-      {/* Background Micro Details / Crosshairs */}
-      <div className="hero-crosshairs font-mono" aria-hidden="true">
-        <span className="crosshair-tag top-left">// SEC.NODE: VAK-01</span>
-        <span className="crosshair-tag top-right">SECURITY_LEVEL: RESEARCH</span>
-      </div>
-
+    <section id="home" className="hero-section" aria-label="Professional Profile Hero">
       <div className="hero-container">
-        {/* Left Column: Terminal & Identity & CTAs */}
+        {/* Left Column: Greeting, Name, Subtitle, Bio & Direct Action Buttons */}
         <div className="hero-left-column">
-          {/* Top Micro System Telemetry */}
-          <div className="hero-meta-bar">
-            <SystemIndicator />
-            <div className="meta-sub-item font-mono">
-              <span className="text-muted">HOST:</span>
-              <span className="text-accent">{PORTFOLIO_DATA.systemHost}</span>
-            </div>
+          <div className="hero-greeting font-mono">
+            &gt; 起動完了 // SECURITY_RESEARCHER :: ACTIVE
           </div>
 
-          {/* Linux Terminal Animation */}
-          <div className="hero-terminal-wrapper">
-            <TerminalIntro />
+          <h1 className="hero-name">
+            <span className="hero-gradient-name">{PORTFOLIO_DATA.name}</span>
+          </h1>
+
+          <h2 className="hero-subtitle font-mono">
+            <Terminal size={20} className="hero-sub-icon text-accent" />
+            <span>Cybersecurity Researcher &amp;</span>
+            <Shield size={20} className="hero-sub-icon text-accent" />
+            <span>Software Developer</span>
+          </h2>
+
+          <p className="hero-description font-sans">
+            Bridging the gap between software development and defensive security. I build secure systems, real-time threat detection platforms, and intelligent security solutions. Specializing in telemetry ingestion, applied cryptography, and machine learning.
+          </p>
+
+          <div className="hero-actions font-mono">
+            <a href="#projects" className="hero-btn-primary">
+              <Cpu size={18} />
+              <span>VIEW PROJECTS</span>
+            </a>
+            <a href="#contact" className="hero-btn-secondary">
+              <span>INITIATE CONTACT</span>
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-btn-secondary hero-resume-btn"
+            >
+              <Download size={18} />
+              <span>RESUME</span>
+            </a>
           </div>
-
-          {/* Professional Identity Typography */}
-          <div className="hero-identity-block">
-            <div className="hero-badge-tag font-mono">
-              <Shield size={12} className="text-accent" />
-              <span>VERIFIED CYBERSECURITY PROFILE</span>
-            </div>
-
-            <h1 className="hero-name">
-              {PORTFOLIO_DATA.name}
-            </h1>
-
-            <div className="hero-titles font-mono">
-              <span className="title-primary">{PORTFOLIO_DATA.title}</span>
-              <span className="title-separator text-muted">/</span>
-              <span className="title-secondary">{PORTFOLIO_DATA.secondaryTitle}</span>
-            </div>
-
-            <p className="hero-description">
-              {PORTFOLIO_DATA.roleDescription}
-            </p>
-
-            <div className="hero-affiliation font-mono">
-              <div className="affiliation-item">
-                <Lock size={12} className="affiliation-icon" />
-                <span>{PORTFOLIO_DATA.degree}</span>
-                <span className="affiliation-bullet">•</span>
-                <span className="text-muted">{PORTFOLIO_DATA.institution}</span>
-              </div>
-              <div className="affiliation-item research-affil">
-                <Terminal size={12} className="affiliation-icon" />
-                <span className="text-accent">Research Contributor:</span>
-                <span className="text-muted">{PORTFOLIO_DATA.researchLab}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Technical Classification Tags */}
-          <div className="hero-tech-tags font-mono" aria-label="Technical focus domains">
-            <span className="tech-tags-label text-muted">// FOCUS:</span>
-            <div className="tech-tags-list">
-              {PORTFOLIO_DATA.technicalFocus.map((tag) => (
-                <span key={tag} className="tech-tag">
-                  <span className="tech-tag-prefix">#</span>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <CTAButtons />
         </div>
 
-        {/* Right Column: Sketch Portrait & SOC Monitoring Panel */}
+        {/* Right Column: Square Reticle Frame with Circular Headshot */}
         <div className="hero-right-column">
-          <div className="hero-visual-card">
-            <PortraitFrame />
-            <SecurityStatus />
-          </div>
+          <PortraitFrame />
         </div>
       </div>
     </section>

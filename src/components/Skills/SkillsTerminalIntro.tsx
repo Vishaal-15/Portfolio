@@ -1,71 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SKILLS_DATA } from '../../config/skillsData';
-import { Terminal, Copy, Check } from 'lucide-react';
+import { Cpu, Terminal, Shield, Layers, Database } from 'lucide-react';
 
 export const SkillsTerminalIntro: React.FC = () => {
   const data = SKILLS_DATA;
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`${data.terminalCmd}\n${data.stackCmd}\n${data.stackStatement}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
 
   return (
-    <div className="skills-terminal-window technical-bracket" aria-label="Technical Arsenal Terminal Environment">
+    <div className="skills-terminal-window technical-bracket" aria-label="Technical Arsenal and Research Stack">
       {/* Titlebar */}
       <div className="skills-term-header font-mono">
         <div className="term-header-left">
-          <Terminal size={13} className="text-accent" />
-          <span>sec-lab: ~/skills/technical-stack.txt</span>
+          <Cpu size={14} className="text-accent" />
+          <span>TECHNICAL ARSENAL &amp; ENGINEERING DOMAINS</span>
         </div>
         <div className="term-header-right">
           <span className="pulse-dot" aria-hidden="true" />
-          <span className="text-accent">ARSENAL_INITIALIZED</span>
-          <button
-            type="button"
-            className="term-copy-btn"
-            onClick={handleCopy}
-            title="Copy terminal session"
-            aria-label="Copy terminal text"
-          >
-            {copied ? <Check size={10} className="text-accent" /> : <Copy size={10} />}
-            <span>{copied ? 'COPIED' : 'COPY'}</span>
-          </button>
+          <span className="text-accent">VERIFIED TOOLCHAIN</span>
         </div>
       </div>
 
-      {/* Terminal Body */}
+      {/* Body */}
       <div className="skills-term-body font-mono">
-        {/* Command 1: ls -la skills/ */}
-        <div className="term-cmd-row">
-          <span className="text-accent">vishaal@sec-lab:~$</span>
-          <span className="term-cmd-text">{data.terminalCmd}</span>
-        </div>
-
-        {/* Directory Output */}
-        <div className="term-dir-grid">
-          {data.terminalOutput.map((dir) => (
-            <span key={dir} className="skills-dir-entry">
-              <span className="dir-perm text-muted">drwxr-xr-x</span>
-              <span className="dir-target text-accent">{dir.replace('drwxr-xr-x ', '')}</span>
-            </span>
-          ))}
-        </div>
-
-        {/* Command 2: cat technical-stack.txt */}
-        <div className="term-cmd-row term-mt">
-          <span className="text-accent">vishaal@sec-lab:~$</span>
-          <span className="term-cmd-text">{data.stackCmd}</span>
-        </div>
-
-        {/* Output Statement */}
+        {/* Quote / Statement */}
         <div className="term-quote-output font-sans">
           <div className="quote-accent-bar" aria-hidden="true" />
           <p className="skills-quote-text">
             "{data.stackStatement}"
           </p>
+        </div>
+
+        {/* 4 Toolchain Focus Disciplines */}
+        <div className="skills-disciplines-row font-mono">
+          <div className="discipline-chip">
+            <Terminal size={12} className="text-accent inline-icon" />
+            <span className="text-primary font-semibold">Systems &amp; Languages:</span>
+            <span className="text-muted">Python, C, TypeScript</span>
+          </div>
+
+          <div className="discipline-chip">
+            <Shield size={12} className="text-accent inline-icon" />
+            <span className="text-primary font-semibold">Security &amp; Protocols:</span>
+            <span className="text-muted">BGP, OSPF, MITRE ATT&amp;CK, TLS</span>
+          </div>
+
+          <div className="discipline-chip">
+            <Database size={12} className="text-accent inline-icon" />
+            <span className="text-primary font-semibold">Distributed Backends:</span>
+            <span className="text-muted">FastAPI, Kafka, Elasticsearch, Redis</span>
+          </div>
+
+          <div className="discipline-chip">
+            <Layers size={12} className="text-accent inline-icon" />
+            <span className="text-primary font-semibold">ML &amp; Data:</span>
+            <span className="text-muted">Scikit-learn, Pandas, NumPy</span>
+          </div>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ export const ResearchSystemFlow: React.FC = () => {
           <span>{xdrResearchContext.title}</span>
         </div>
         <div className="system-flow-badge">
-          <span>100,000+ ENDPOINT SCALE TEST</span>
+          <span>DISTRIBUTED TELEMETRY STREAMING</span>
         </div>
       </div>
 

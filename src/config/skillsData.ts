@@ -324,8 +324,8 @@ export const SKILLS_DATA: SkillsConfig = {
           name: "Apache Kafka",
           category: "backend",
           type: "FRAMEWORK",
-          context: "High-throughput distributed event streaming for ingesting real-time endpoint telemetry from 100,000+ sources.",
-          usedIn: ["VIT-AP XDR Platform", "Telemetry Queueing"],
+          context: "High-throughput distributed event streaming for ingesting real-time security telemetry across distributed sources.",
+          usedIn: ["VIT-AP Agentic SOC Platform", "Telemetry Queueing"],
           role: "primary"
         }
       ]
@@ -562,7 +562,7 @@ export const SKILLS_DATA: SkillsConfig = {
 
   ecosystem: {
     title: "TECHNICAL ECOSYSTEM ARCHITECTURE",
-    subtitle: "Cybersecurity-Anchored Systems Engineering",
+    subtitle: "Cybersecurity & Software Development",
     overview: "My technical capabilities converge on building secure, resilient, and intelligent computing systems where cybersecurity principles inform every architectural decision across backend, machine learning, and networking.",
     coreHub: {
       id: "cybersecurity-hub",
@@ -599,7 +599,7 @@ export const SKILLS_DATA: SkillsConfig = {
       title: "SECURE SYSTEMS",
       subtitle: "Empirical Defensible Outcome",
       category: "outcome",
-      coreTech: ["Scale-Tested XDR (100k+)", "Hardened Prompt Scorer (~95% Block)", "Production RSA-OAEP", "Fast Forecasting (<500ms)"]
+      coreTech: ["Agentic SOC Platform", "Hardened Prompt Scorer (~95% Block)", "Production RSA-OAEP", "Fast Forecasting (<500ms)"]
     }
   }
 };

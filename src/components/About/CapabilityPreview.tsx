@@ -1,9 +1,9 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { Folder, Shield, Cpu, Server, Radio, Lock, Network } from 'lucide-react';
+import { Folder, Shield, Cpu, Server, Radio, Lock, Network, Layers } from 'lucide-react';
 
 export const CapabilityPreview: React.FC = () => {
-  const { terminalUser, systemHost, about } = PORTFOLIO_DATA;
+  const { about } = PORTFOLIO_DATA;
 
   // Icon map for technical domains
   const getIcon = (slug: string) => {
@@ -26,17 +26,14 @@ export const CapabilityPreview: React.FC = () => {
   };
 
   return (
-    <div className="capabilities-preview-box technical-bracket font-mono" aria-label="Technical Ecosystem Preview">
-      {/* Header Command */}
+    <div className="capabilities-preview-box technical-bracket font-mono" aria-label="Research and Technical Competencies">
+      {/* Header */}
       <div className="capabilities-header">
-        <div className="terminal-command-line">
-          <span className="prompt-user">{terminalUser}@{systemHost}</span>
-          <span className="prompt-separator">:</span>
-          <span className="prompt-path">~</span>
-          <span className="prompt-char">$</span>
-          <span className="terminal-cmd">{about.capabilitiesCommand}</span>
+        <div className="capabilities-header-title">
+          <Layers size={14} className="text-accent inline-icon" />
+          <span>RESEARCH &amp; TECHNICAL COMPETENCIES</span>
         </div>
-        <span className="capabilities-count-tag text-muted">6 directories</span>
+        <span className="capabilities-count-tag text-muted">6 Core Domains</span>
       </div>
 
       {/* Capabilities 2-Column Grid */}
@@ -45,7 +42,7 @@ export const CapabilityPreview: React.FC = () => {
           <div key={item.slug} className="capability-card">
             <div className="capability-card-top">
               {getIcon(item.slug)}
-              <span className="capability-slug text-accent">{item.slug}</span>
+              <span className="capability-slug text-accent">{item.title}</span>
             </div>
             <p className="capability-description font-sans">
               {item.description}

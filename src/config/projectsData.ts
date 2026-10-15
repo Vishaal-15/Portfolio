@@ -53,7 +53,7 @@ export interface ProjectsConfig {
 export const PROJECTS_DATA: ProjectsConfig = {
   command: "ls projects/",
   directoryOutput: [
-    { permissions: "drwxr-xr-x", name: "xdr-platform/", description: "Scale-Tested XDR Platform (VIT-AP Research)" },
+    { permissions: "drwxr-xr-x", name: "agentic-soc/", description: "Agentic SOC Platform (VIT-AP Research)" },
     { permissions: "drwxr-xr-x", name: "secure-prompt-scorer/", description: "Prompt-Based Scorer with 7 Security Controls" },
     { permissions: "drwxr-xr-x", name: "rsa-implementation/", description: "Raw Number Theory & 2048-Bit RSA-OAEP" },
     { permissions: "drwxr-xr-x", name: "ecommerce-price-prediction/", description: "Full-Stack ML Forecasting Engine (<500ms)" },

@@ -1,47 +1,57 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { ArrowRight, Download, Shield } from 'lucide-react';
+import { ArrowRight, FileText, FolderGit2 } from 'lucide-react';
 import './CTAButtons.css';
 
 export const CTAButtons: React.FC = () => {
-  const handleProjectsClick = (e: React.MouseEvent) => {
+  const handleScrollTo = (e: React.MouseEvent, targetId: string) => {
     e.preventDefault();
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div className="hero-cta-group">
-      {/* Primary CTA: View Projects */}
+      {/* Primary CTA: Explore Research & Systems */}
       <a
-        href="#projects"
+        href="#research"
         className="btn-primary font-mono"
-        onClick={handleProjectsClick}
-        aria-label="View cybersecurity projects"
+        onClick={(e) => handleScrollTo(e, 'research')}
+        aria-label="Explore research areas and systems"
       >
         <span className="btn-glow-layer" />
         <span className="btn-content">
-          <Shield size={16} className="btn-icon-leading" />
-          <span className="btn-label">VIEW MY PROJECTS</span>
+          <FolderGit2 size={15} className="btn-icon-leading" />
+          <span className="btn-label">EXPLORE RESEARCH</span>
           <ArrowRight size={15} className="btn-icon-trailing" />
         </span>
       </a>
 
-      {/* Secondary CTA: Download Resume */}
+      {/* Secondary CTA: Download Academic CV */}
       <a
         href={PORTFOLIO_DATA.resumePath}
         target="_blank"
         rel="noopener noreferrer"
         className="btn-secondary font-mono"
-        download="Vishaal_AK_Resume.pdf"
-        aria-label="Download Vishaal A K Resume (PDF)"
+        download="Vishaal_AK_Academic_CV.pdf"
+        aria-label="Download Academic CV (PDF)"
       >
         <span className="btn-content">
-          <Download size={15} className="btn-icon-leading" />
-          <span className="btn-label">DOWNLOAD MY RESUME</span>
+          <FileText size={15} className="btn-icon-leading text-accent" />
+          <span className="btn-label">ACADEMIC CV (PDF)</span>
         </span>
+      </a>
+
+      {/* Tertiary Quick Link: View Projects */}
+      <a
+        href="#projects"
+        className="btn-tertiary font-mono"
+        onClick={(e) => handleScrollTo(e, 'projects')}
+        aria-label="View technical projects"
+      >
+        <span>PROJECTS &rarr;</span>
       </a>
     </div>
   );

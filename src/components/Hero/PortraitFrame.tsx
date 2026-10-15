@@ -1,6 +1,5 @@
 import React from 'react';
-import { PORTFOLIO_DATA } from '../../config/portfolioData';
-import { ShieldCheck, Fingerprint, Activity, Crosshair } from 'lucide-react';
+import { Fingerprint, Crosshair } from 'lucide-react';
 import portraitImg from '../../assets/portrait.png';
 import './PortraitFrame.css';
 
@@ -53,26 +52,9 @@ export const PortraitFrame: React.FC = () => {
           <div className="footer-status-item">
             <span className="footer-status-key text-muted">STATUS:</span>
             <span className="footer-status-val text-accent">
-              <ShieldCheck size={12} className="inline-icon" />
-              SECURE
-            </span>
-          </div>
-
-          <div className="footer-status-divider" />
-
-          <div className="footer-status-item">
-            <span className="footer-status-key text-muted">PROFILE:</span>
-            <span className="footer-status-val text-accent">
-              <Activity size={12} className="inline-icon" />
+              <span className="pulse-dot" style={{ width: '6px', height: '6px', display: 'inline-block' }} />
               ACTIVE
             </span>
-          </div>
-
-          <div className="footer-status-divider" />
-
-          <div className="footer-status-item env-tag">
-            <span className="footer-status-key text-muted">ENV:</span>
-            <span className="footer-status-val">{PORTFOLIO_DATA.systemMeta.environment}</span>
           </div>
         </div>
       </div>

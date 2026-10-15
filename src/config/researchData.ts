@@ -181,7 +181,7 @@ export const RESEARCH_DATA: ResearchConfig = {
       description: "Researching high-throughput event ingestion, distributed log indexing, and automated rule engines for threat detection.",
       keyTopics: ["Real-Time Telemetry", "Log Ingest Pipelines", "Event Indexing", "Detection Engines"],
       researchQuestions: [
-        "How can asynchronous message streaming scale to ingest security telemetry from 100,000+ sources?",
+        "How can asynchronous message streaming scale to ingest security telemetry from distributed sources in real time?",
         "What indexing schemas provide the optimal trade-off between write throughput and search latency?"
       ]
     },
@@ -242,8 +242,8 @@ export const RESEARCH_DATA: ResearchConfig = {
 
   xdrResearchContext: {
     title: "CURRENT TECHNICAL RESEARCH CONTEXT",
-    subtitle: "High-Performance Extended Detection & Response (XDR) Platform",
-    overview: "As part of my cybersecurity research experience at VIT-AP University, I contribute to the architectural design and implementation of a high-performance XDR platform scale-tested for 100,000+ endpoints.",
+    subtitle: "High-Performance Agentic SOC Platform",
+    overview: "As part of my cybersecurity research experience at VIT-AP University, I contribute to the architectural design and implementation of a high-performance Agentic SOC platform for distributed telemetry ingestion and automated triage.",
     highlights: [
       "Asynchronous FastAPI backend tier with Redis in-memory session caching",
       "Elasticsearch cluster for high-speed security log aggregation and paginated queries",
@@ -325,7 +325,7 @@ export const RESEARCH_DATA: ResearchConfig = {
       status: "CURRENT WORK",
       focusOverview: "High-speed telemetry ingestion, Elasticsearch query pagination, and automated incident triage.",
       technicalExplorations: [
-        "Scale testing ingestion pipelines for 100,000+ distributed endpoint event streams",
+        "Ingestion pipelines for distributed endpoint event streams",
         "Automated response workflows with MITRE ATT&CK classification and SLA ticketing"
       ]
     },

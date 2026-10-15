@@ -61,6 +61,22 @@ export interface ExperienceConfig {
   }[];
 }
 
+export interface AcademicCoursework {
+  title: string;
+  category: string;
+  relevance: string;
+}
+
+export interface AcademicProfileConfig {
+  applicantStatus: string;
+  targetDegree: string;
+  statementHeadline: string;
+  researchFocusSummary: string;
+  coursework: AcademicCoursework[];
+  cvUrl: string;
+  cvLabel: string;
+}
+
 export interface PortfolioConfig {
   name: string;
   brand: string;
@@ -80,6 +96,7 @@ export interface PortfolioConfig {
   navItems: NavItem[];
   technicalFocus: string[];
   securityTags: string[];
+  academicProfile: AcademicProfileConfig;
   systemMeta: {
     nodeId: string;
     status: string;
@@ -116,18 +133,18 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   name: "Vishaal A K",
   brand: "VISHAAL AK",
   title: "Cybersecurity Researcher",
-  secondaryTitle: "Software Engineer",
+  secondaryTitle: "Software Developer",
   currentPosition: "Cybersecurity Research Intern",
-  roleDescription: "I build secure systems, real-time detection platforms, and intelligent security solutions.",
+  roleDescription: "Building secure systems, real-time threat detection platforms, and intelligent security solutions.",
   institution: "Kumaraguru College of Technology, Coimbatore",
   degree: "B.E. Computer Science and Engineering",
-  currentYear: "Fourth-Year Student",
+  currentYear: "Fourth-Year Undergraduate (2021 — 2025)",
   location: "Coimbatore, India",
   researchLab: "Centre of Excellence in Cyber Security, VIT-AP University",
   resumePath: "/resume.pdf",
-  systemHost: "sec-lab",
+  systemHost: "research-workstation",
   terminalUser: "vishaal",
-  workingDirectory: "/home/vishaal/security-research",
+  workingDirectory: "/academic/research/systems",
   navItems: [
     { label: "ABOUT", href: "#about" },
     { label: "EXPERIENCE", href: "#experience" },
@@ -137,34 +154,74 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
     { label: "CONTACT", href: "#contact" }
   ],
   technicalFocus: [
+    "DISTRIBUTED SYSTEMS",
     "CYBERSECURITY",
-    "SECURE SYSTEMS",
     "MACHINE LEARNING",
-    "BACKEND ENGINEERING",
-    "NETWORK SECURITY"
+    "BACKEND ARCHITECTURES",
+    "NETWORK PROTOCOLS"
   ],
   securityTags: [
-    "Cybersecurity",
-    "Secure Systems",
-    "Machine Learning",
-    "Real-time Detection"
+    "Systems Security",
+    "Real-time Telemetry",
+    "Applied Machine Learning",
+    "Cryptographic Protocols"
   ],
+  academicProfile: {
+    applicantStatus: "Cybersecurity & Software Developer",
+    targetDegree: "Master of Science (M.S.) in Computer Science / Cybersecurity",
+    statementHeadline: "Engineering Defensible, Secure Systems & Intelligent Anomaly Detection",
+    researchFocusSummary: "Bridging rigorous academic research with robust software engineering—investigating high-throughput security event pipelines, first-principles cryptography, and adversarial robustness in generative models.",
+    cvUrl: "/resume.pdf",
+    cvLabel: "Download Academic CV (PDF)",
+    coursework: [
+      {
+        title: "Operating Systems & Concurrency",
+        category: "Core Systems",
+        relevance: "Process management, memory virtualization, IPC, and POSIX threads"
+      },
+      {
+        title: "Computer Networks & Protocols",
+        category: "Networks",
+        relevance: "BGP, OSPF, TCP/IP stack internals, socket programming, and packet routing"
+      },
+      {
+        title: "Applied Cryptography & Network Security",
+        category: "Security",
+        relevance: "Asymmetric ciphers, RSA-OAEP, modular arithmetic, and TLS protocols"
+      },
+      {
+        title: "Data Structures & Algorithm Design",
+        category: "Theory & Algorithms",
+        relevance: "Time/space complexity, graph traversal, and dynamic programming"
+      },
+      {
+        title: "Machine Learning & Statistical Modeling",
+        category: "Machine Learning",
+        relevance: "Supervised classification, regression modeling, and cross-validation"
+      },
+      {
+        title: "Database Management & Distributed Data",
+        category: "Systems & Data",
+        relevance: "Relational schemas, indexing strategies, and asynchronous queues"
+      }
+    ]
+  },
   systemMeta: {
-    nodeId: "SEC-LAB / PROFILE_01",
-    status: "ACTIVE",
-    mode: "RESEARCH",
-    environment: "SECURE",
-    clearance: "OPERATIONAL"
+    nodeId: "VIT-AP CoE / KCT",
+    status: "PORTFOLIO",
+    mode: "CYBERSECURITY & DEV",
+    environment: "PRODUCTION & RESEARCH",
+    clearance: "ACTIVE"
   },
   about: {
-    command: "cat about.txt",
+    command: "Academic Dossier",
     paragraphs: [
-      "I am a fourth-year Computer Science and Engineering student at Kumaraguru College of Technology, Coimbatore, specializing in cybersecurity, secure systems, machine learning, and backend development.",
-      "I am currently contributing to cybersecurity research at VIT-AP University's Centre of Excellence in Cyber Security, where I focus on real-time detection systems, secure infrastructure, and threat-aware architectures.",
-      "My work bridges practical software engineering with applied security research — designing robust backends, deploying detection models, and engineering resilient solutions with security by design."
+      "I am a fourth-year Computer Science and Engineering undergraduate at Kumaraguru College of Technology, Coimbatore, dedicated to cybersecurity, distributed backends, machine learning, and security engineering.",
+      "Currently, I am a Security Research Intern at the Centre of Excellence in Cyber Security, VIT-AP University. My work centers on real-time security telemetry ingestion, Agentic SOC platform architectures, and automated incident triage.",
+      "My work bridges practical software development with applied security research—designing observable backends, validating cryptographic implementations against formal test vectors, and deploying machine learning pipelines with verifiable benchmarks."
     ],
-    philosophyCommand: "cat philosophy.txt",
-    philosophyQuote: "I focus on building systems that are not only functional, but secure, observable, and resilient.",
+    philosophyCommand: "Research & Engineering Principles",
+    philosophyQuote: "I focus on building systems that are not only functional, but mathematically sound, observable, and resilient under adversarial load.",
     capabilitiesCommand: "ls capabilities/",
     capabilities: [
       {
@@ -178,7 +235,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
         description: "Building, evaluating, and applying ML models for intelligent pattern & anomaly detection."
       },
       {
-        title: "Backend Engineering",
+        title: "Backend Development",
         slug: "backend-engineering/",
         description: "Developing high-performance APIs, data pipelines, and real-time processing backends."
       },
@@ -200,7 +257,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
     ],
     securityAttributes: [
       { label: "SYSTEMS THINKING", status: "ACTIVE" },
-      { label: "SECURE ENGINEERING", status: "ACTIVE" },
+      { label: "SECURE CODING", status: "ACTIVE" },
       { label: "APPLIED RESEARCH", status: "ACTIVE" },
       { label: "CONTINUOUS LEARNING", status: "ACTIVE" }
     ],
@@ -210,7 +267,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   experience: {
     command: "cat experience.log",
     loadingText: "Loading professional experience...",
-    recordsCount: "[03] EXPERIENCE RECORDS FOUND",
+    recordsCount: "[01] VERIFIED RECORD FOUND",
     verifiedStatus: "[STATUS] VERIFIED",
     filterCommand: "grep -i 'security' experience.log",
     socStatusItems: [
@@ -231,16 +288,16 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
         status: "CURRENT",
         isPrimary: true,
         recruiterSummary: {
-          headline: "XDR PLATFORM · 100,000+ ENDPOINT SCALE TESTING",
-          highlight: "REAL-TIME SECURITY TELEMETRY · MITRE ATT&CK · INCIDENT RESPONSE",
+          headline: "AGENTIC SOC PLATFORM · REAL-TIME TELEMETRY",
+          highlight: "AUTONOMOUS INCIDENT TRIAGE · MITRE ATT&CK · SOAR ORCHESTRATION",
           tags: ["FastAPI", "Redis", "Elasticsearch", "Apache Kafka", "MITRE ATT&CK", "Jira", "ServiceNow", "Kasm RBI"]
         },
-        summary: "I built a high-performance, production-ready Extended Detection & Response (XDR) platform capable of scale-testing 100,000+ endpoints with real-time security telemetry.",
+        summary: "I engineered an Agentic SOC platform featuring real-time security telemetry streaming, automated incident triage, and MITRE ATT&CK taxonomy alignment.",
         bullets: [
-          "I built a high-performance, production-ready Extended Detection & Response (XDR) platform capable of scale-testing 100,000+ endpoints.",
-          "I engineered an asynchronous FastAPI backend and Redis caching layer coupled with Elasticsearch for high-speed log indexing and paginated search of real-time security telemetry.",
-          "I designed a resilient asynchronous backend processing tier using Apache Kafka and Elasticsearch to support high-throughput telemetry pipelines.",
-          "I integrated an automated response orchestrator featuring MITRE ATT&CK tactic and technique mapping, SLA-enforced incident ticketing across Jira and ServiceNow, and secure browser session isolation via Kasm RBI."
+          "I engineered an Agentic SOC platform for real-time security telemetry ingestion, automated alert triage, and incident containment.",
+          "I developed an asynchronous FastAPI backend and Redis caching layer coupled with Elasticsearch for high-speed log indexing and paginated event search.",
+          "I designed a resilient asynchronous event queueing pipeline using Apache Kafka and Elasticsearch to support high-throughput telemetry streams.",
+          "I integrated an automated response orchestrator featuring MITRE ATT&CK technique mapping, SLA-enforced ticketing across Jira and ServiceNow, and browser session isolation via Kasm RBI."
         ],
         stack: [
           "FastAPI",
@@ -254,71 +311,11 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
           "Kasm RBI"
         ],
         metric: {
-          value: "100,000+",
-          label: "ENDPOINTS",
-          context: "SCALE TEST"
+          value: "REAL-TIME",
+          label: "AGENTIC SOC",
+          context: "TELEMETRY PIPELINE"
         },
         architectureType: "xdr"
-      },
-      {
-        id: "juniper-networking",
-        order: "02",
-        role: "NETWORKING AND CLOUD INTERN",
-        organization: "JUNIPER NETWORKS (HPE)",
-        department: "Enterprise Networking Lab",
-        period: "OCT 2024 — DEC 2024",
-        year: "2024",
-        status: "COMPLETED",
-        isPrimary: false,
-        summary: "I analyzed enterprise networking architectures, configured core dynamic routing protocols, and engineered virtual network topologies in simulated environments.",
-        bullets: [
-          "I analyzed enterprise networking architecture and applied dynamic routing configurations across BGP and OSPF within a simulated environment.",
-          "I gained hands-on operational exposure to Linux-based network administration, virtual network topologies, and switch and router management.",
-          "I investigated cloud networking fundamentals, hybrid infrastructure interconnects, and scalable protocol implementations."
-        ],
-        stack: [
-          "BGP",
-          "OSPF",
-          "Linux Networking",
-          "Cloud Fundamentals",
-          "Virtual Topologies",
-          "Switch Management",
-          "Router Management",
-          "Hybrid Infrastructure"
-        ],
-        architectureType: "network"
-      },
-      {
-        id: "motioncut-web",
-        order: "03",
-        role: "WEB DEVELOPMENT INTERN",
-        organization: "MOTIONCUT",
-        department: "Frontend Engineering Team",
-        period: "NOV 2024 — DEC 2024",
-        year: "2024",
-        status: "COMPLETED",
-        isPrimary: false,
-        summary: "I optimized frontend UI components, enhanced responsiveness, and achieved significant render performance improvements across production web modules.",
-        bullets: [
-          "I optimized frontend UI components, improved responsiveness, and streamlined client-side asset delivery across 3 web modules.",
-          "I reduced page render time by approximately 30% through modular component refactoring and performance profiling.",
-          "I collaborated using agile sprint cycles and maintained rigorous Git/version-control workflows."
-        ],
-        stack: [
-          "React",
-          "JavaScript",
-          "HTML5",
-          "CSS3",
-          "Git / GitHub",
-          "Agile Sprints",
-          "Performance Optimization"
-        ],
-        metric: {
-          value: "~30%",
-          label: "IMPROVEMENT",
-          context: "PAGE RENDER TIME"
-        },
-        architectureType: "none"
       }
     ]
   },

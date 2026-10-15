@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import { PROJECTS_DATA, ProjectItem } from '../../config/projectsData';
+import { PROJECTS_DATA } from '../../config/projectsData';
 import { ProjectFilters } from './ProjectFilters';
-import { FeaturedProject } from './FeaturedProject';
 import { ProjectCard } from './ProjectCard';
-import { ProjectCaseStudyModal } from './ProjectCaseStudyModal';
-import { FolderGit2, ShieldCheck, Terminal, Folder } from 'lucide-react';
+import { FolderGit2 } from 'lucide-react';
 import './Projects.css';
 
 export const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | 'security' | 'ml' | 'backend' | 'crypto'>('all');
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState<ProjectItem | null>(null);
 
   const allProjects = PROJECTS_DATA.projects;
 
@@ -18,66 +15,55 @@ export const Projects: React.FC = () => {
     return p.categories.includes(activeCategory);
   });
 
-  const featuredList = filteredProjects.filter((p) => p.tier === 'featured');
-  const standardList = filteredProjects.filter((p) => p.tier === 'standard');
-
   return (
-    <section id="projects" className="projects-section" aria-label="Technical Projects and Engineering Repositories">
-      {/* Top Ambient Crosshairs */}
+    <section id="projects" className="projects-section" aria-label="Technical Projects and Open-Source Repositories">
+      {/* Top Ambient Banner */}
       <div className="projects-crosshairs font-mono" aria-hidden="true">
-        <span className="crosshair-tag top-left">// REPOSITORY: VAK-SEC-PROJECTS</span>
-        <span className="crosshair-tag top-right">ACCESS_MODE: VERIFIED_SOURCE</span>
+        <span className="crosshair-tag top-left">// SOFTWARE DEVELOPMENT &amp; OPEN-SOURCE PROJECTS</span>
+        <span className="crosshair-tag top-right">EMPIRICALLY VERIFIED BENCHMARKS</span>
       </div>
 
       <div className="projects-container">
         {/* Section Header */}
         <div className="projects-section-header">
-          <div className="section-badge font-mono">
-            <ShieldCheck size={12} className="text-accent" />
-            <span>03. TECHNICAL PROJECTS &amp; LAB REPOSITORIES</span>
-          </div>
-
           <h2 className="section-main-title">
-            Security Engineering <span className="text-accent">&amp;</span> Applied Systems
+            Software Development <span className="text-accent">&amp;</span> Applied Cryptography
           </h2>
-
-          <div className="section-subtext font-mono">
-            <FolderGit2 size={12} className="inline-icon text-accent" />
-            <span>PRIVACY-BY-DESIGN • CRYPTOGRAPHIC PROTOCOLS • FULL-STACK ML PIPELINES</span>
-          </div>
         </div>
 
-        {/* Technical Terminal Directory Header */}
-        <div className="projects-terminal-window technical-bracket" aria-label="Project Repository Terminal">
+        {/* Executive Research Systems Overview Bar */}
+        <div className="projects-terminal-window technical-bracket" aria-label="Research Systems Overview">
           <div className="projects-term-bar font-mono">
             <div className="projects-term-title">
-              <Terminal size={13} className="text-accent" />
-              <span>sec-lab: ~/projects</span>
+              <FolderGit2 size={13} className="text-accent" />
+              <span>RESEARCH SYSTEMS &amp; BENCHMARKS INDEX</span>
             </div>
             <div className="projects-term-status">
               <span className="pulse-dot" aria-hidden="true" />
-              <span className="text-accent">GIT_TREES_VERIFIED</span>
+              <span className="text-accent">4 VERIFIED REPOSITORIES</span>
             </div>
           </div>
 
-          <div className="projects-term-body font-mono">
-            <div className="term-line">
-              <span className="text-accent">vishaal@sec-lab:~$</span>
-              <span className="term-cmd-text">{PROJECTS_DATA.command}</span>
+          <div className="projects-overview-grid font-mono">
+            <div className="project-highlight-chip">
+              <span className="chip-metric text-accent">~95% ATTACK MITIGATION</span>
+              <span className="chip-name">Secure Prompt Scorer</span>
+              <span className="chip-desc text-muted">7-tier defense-in-depth LLM boundary</span>
             </div>
-
-            {/* Directory Listing Output */}
-            <div className="projects-dir-output" role="region" aria-label="Directory Listing">
-              {PROJECTS_DATA.directoryOutput.map((dir) => (
-                <div key={dir.name} className="dir-item-row">
-                  <span className="dir-perms text-muted">{dir.permissions}</span>
-                  <span className="dir-name text-accent">
-                    <Folder size={11} className="inline-icon" />
-                    {dir.name}
-                  </span>
-                  <span className="dir-desc text-secondary">// {dir.description}</span>
-                </div>
-              ))}
+            <div className="project-highlight-chip">
+              <span className="chip-metric text-accent">2048-BIT SEMANTIC SECURITY</span>
+              <span className="chip-name">RSA-OAEP Cryptography</span>
+              <span className="chip-desc text-muted">Raw number theory vs PyCryptodome (100+ vectors)</span>
+            </div>
+            <div className="project-highlight-chip">
+              <span className="chip-metric text-accent">&lt;500MS LATENCY</span>
+              <span className="chip-name">Price Prediction Engine</span>
+              <span className="chip-desc text-muted">Full-stack regression pipeline (10,000+ records)</span>
+            </div>
+            <div className="project-highlight-chip">
+              <span className="chip-metric text-accent">88% ACCURACY (+12%)</span>
+              <span className="chip-name">Intelligent Crop Classifier</span>
+              <span className="chip-desc text-muted">Cross-validated Random Forest agronomic model</span>
             </div>
           </div>
         </div>
@@ -89,48 +75,16 @@ export const Projects: React.FC = () => {
           filteredCount={filteredProjects.length}
         />
 
-        {/* Tier 1: Featured Security Projects */}
-        {featuredList.length > 0 && (
-          <div className="featured-projects-tier" role="region" aria-label="Featured Security Projects">
-            <div className="tier-header-label font-mono">
-              <span className="text-accent">// TIER 01:</span> FEATURED SECURITY &amp; CRYPTOGRAPHY PROJECTS
-            </div>
-            <div className="featured-feed">
-              {featuredList.map((project) => (
-                <FeaturedProject
-                  key={project.id}
-                  project={project}
-                  onOpenCaseStudy={setSelectedCaseStudy}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Tier 2: Standard Machine Learning & Full-Stack Projects */}
-        {standardList.length > 0 && (
-          <div className="standard-projects-tier" role="region" aria-label="Technical and Machine Learning Projects">
-            <div className="tier-header-label font-mono">
-              <span className="text-accent">// TIER 02:</span> FULL-STACK &amp; MACHINE LEARNING SYSTEMS
-            </div>
-            <div className="standard-grid">
-              {standardList.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onOpenCaseStudy={setSelectedCaseStudy}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Clean, Unified Project Cards Grid (Abhiram reference style) */}
+        <div className="projects-cards-grid" role="region" aria-label="Projects List">
+          {filteredProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
+        </div>
       </div>
-
-      {/* Case Study Detailed Modal */}
-      <ProjectCaseStudyModal
-        project={selectedCaseStudy}
-        onClose={() => setSelectedCaseStudy(null)}
-      />
     </section>
   );
 };
