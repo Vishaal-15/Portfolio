@@ -26,12 +26,12 @@ export const CapabilityPreview: React.FC = () => {
   };
 
   return (
-    <div className="capabilities-preview-box technical-bracket font-mono" aria-label="Research and Technical Competencies">
+    <div className="capabilities-preview-box technical-bracket" aria-label="Research and Technical Competencies">
       {/* Header */}
       <div className="capabilities-header">
         <div className="capabilities-header-title">
-          <Layers size={14} className="text-accent inline-icon" />
-          <span>RESEARCH &amp; TECHNICAL COMPETENCIES</span>
+          <Layers size={15} className="text-accent inline-icon" />
+          <span>Research &amp; Technical Competencies</span>
         </div>
         <span className="capabilities-count-tag text-muted">6 Core Domains</span>
       </div>

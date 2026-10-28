@@ -1,7 +1,7 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../../config/portfolioData';
 import { PortraitFrame } from './PortraitFrame';
-import { Terminal, Shield, Cpu, Download } from 'lucide-react';
+import { ArrowRight, Mail, FileText } from 'lucide-react';
 import './Hero.css';
 
 export const Hero: React.FC = () => {
@@ -14,24 +14,22 @@ export const Hero: React.FC = () => {
             <span className="hero-gradient-name">{PORTFOLIO_DATA.name}</span>
           </h1>
 
-          <h2 className="hero-subtitle font-mono">
-            <Shield size={20} className="hero-sub-icon text-accent" />
-            <span>Cybersecurity &amp;</span>
-            <Terminal size={20} className="hero-sub-icon text-accent" />
-            <span>Software Developer</span>
+          <h2 className="hero-subtitle">
+            Cybersecurity <span className="hero-subtitle-amp">&amp;</span> Software Developer
           </h2>
 
           <p className="hero-description font-sans">
-            Bridging the gap between software development and defensive security. I build secure systems, real-time threat detection platforms, and intelligent security solutions. Specializing in telemetry ingestion, applied cryptography, and machine learning.
+            Bridging software engineering and defensive security. I design and build high-throughput security event pipelines, real-time threat detection platforms, applied cryptographic solutions, and machine learning models.
           </p>
 
-          <div className="hero-actions font-mono">
+          <div className="hero-actions">
             <a href="#projects" className="hero-btn-primary">
-              <Cpu size={18} />
-              <span>VIEW PROJECTS</span>
+              <span>View Projects</span>
+              <ArrowRight size={16} />
             </a>
             <a href="#contact" className="hero-btn-secondary">
-              <span>INITIATE CONTACT</span>
+              <Mail size={16} />
+              <span>Get in Touch</span>
             </a>
             <a
               href="/resume.pdf"
@@ -39,13 +37,13 @@ export const Hero: React.FC = () => {
               rel="noopener noreferrer"
               className="hero-btn-secondary hero-resume-btn"
             >
-              <Download size={18} />
-              <span>RESUME</span>
+              <FileText size={16} />
+              <span>Resume</span>
             </a>
           </div>
         </div>
 
-        {/* Right Column: Square Reticle Frame with Circular Headshot */}
+        {/* Right Column: Clean Modern Portrait */}
         <div className="hero-right-column">
           <PortraitFrame />
         </div>

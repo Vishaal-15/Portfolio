@@ -146,12 +146,12 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   terminalUser: "vishaal",
   workingDirectory: "/academic/research/systems",
   navItems: [
-    { label: "ABOUT", href: "#about" },
-    { label: "EXPERIENCE", href: "#experience" },
-    { label: "PROJECTS", href: "#projects" },
-    { label: "RESEARCH", href: "#research" },
-    { label: "SKILLS", href: "#skills" },
-    { label: "CONTACT", href: "#contact" }
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Research", href: "#research" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" }
   ],
   technicalFocus: [
     "DISTRIBUTED SYSTEMS",
@@ -256,10 +256,10 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
       }
     ],
     securityAttributes: [
-      { label: "SYSTEMS THINKING", status: "ACTIVE" },
-      { label: "SECURE CODING", status: "ACTIVE" },
-      { label: "APPLIED RESEARCH", status: "ACTIVE" },
-      { label: "CONTINUOUS LEARNING", status: "ACTIVE" }
+      { label: "Systems Thinking", status: "Core" },
+      { label: "Defensive Engineering", status: "Core" },
+      { label: "Applied Research", status: "Focus" },
+      { label: "Continuous Learning", status: "Ongoing" }
     ],
     pwdCommand: "pwd",
     pwdOutput: "/home/vishaal/security-research"

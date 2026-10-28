@@ -29,10 +29,9 @@ export const Footer: React.FC = () => {
             <a
               href="#home"
               onClick={handleScrollToTop}
-              className="footer-brand font-mono"
+              className="footer-brand"
               aria-label="Vishaal A K - Back to top"
             >
-              <span className="brand-prefix">//</span>
               <span className="brand-name">VISHAAL AK</span>
             </a>
             <p className="footer-tagline">
@@ -42,8 +41,8 @@ export const Footer: React.FC = () => {
 
           {/* Navigation Links Column */}
           <nav className="footer-nav-col" aria-label="Footer Section Navigation">
-            <span className="footer-col-heading font-mono">SECTIONS</span>
-            <ul className="footer-nav-list font-mono">
+            <span className="footer-col-heading">Navigation</span>
+            <ul className="footer-nav-list">
               <li>
                 <a
                   href="#about"
@@ -103,8 +102,8 @@ export const Footer: React.FC = () => {
 
           {/* Connect Links Column */}
           <div className="footer-connect-col" aria-label="Connect and Social Links">
-            <span className="footer-col-heading font-mono">CONNECT</span>
-            <ul className="footer-connect-list font-mono">
+            <span className="footer-col-heading">Connect</span>
+            <ul className="footer-connect-list">
               <li>
                 <a
                   href={contact.github}

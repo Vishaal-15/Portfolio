@@ -86,20 +86,18 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="skills-section" aria-label="Technical Arsenal and Skills Matrix">
-      {/* Top Crosshair Tag */}
-      <div className="skills-crosshairs font-mono" aria-hidden="true">
-        <span className="crosshair-tag top-left">// CORE TECHNICAL COMPETENCIES</span>
-        <span className="crosshair-tag top-right">VERIFIED TOOLCHAIN</span>
-      </div>
-
+    <section id="skills" className="skills-section" aria-label="Technical Skills and Competencies">
       <div className="skills-container">
         {/* Section Header */}
-        <div className="skills-matrix-header">
-          <h2 className="skills-matrix-title font-mono">
-            &lt;Skills_Matrix /&gt;
+        <div className="skills-section-header">
+          <div className="section-badge">
+            <Cpu size={13} className="text-accent" />
+            <span>Skills &amp; Expertise</span>
+          </div>
+
+          <h2 className="section-main-title">
+            Technical Competencies <span className="text-accent">&amp;</span> Toolchain
           </h2>
-          <div className="skills-matrix-divider" aria-hidden="true" />
         </div>
 
         {/* 6-Card Clean Grid */}
@@ -111,10 +109,10 @@ export const Skills: React.FC = () => {
                 <h3 className="matrix-card-title">{cat.title}</h3>
               </div>
 
-              <ul className="matrix-skills-list font-mono">
+              <ul className="matrix-skills-list">
                 {cat.skills.map((skill) => (
                   <li key={skill} className="matrix-skill-item">
-                    <span className="matrix-bullet text-accent">&gt;</span>
+                    <span className="matrix-bullet text-accent">•</span>
                     <span className="matrix-skill-name">{skill}</span>
                   </li>
                 ))}

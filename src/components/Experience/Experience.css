@@ -4,8 +4,8 @@
 
 .experience-section {
   position: relative;
-  padding: 5rem 1.5rem 5.5rem 1.5rem;
-  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
+  padding: 2.75rem 1.5rem 4rem 1.5rem;
+  scroll-margin-top: calc(var(--navbar-height) - 1.5rem);
   z-index: 10;
   border-top: 1px solid var(--border-subtle);
   background: linear-gradient(180deg, rgba(5, 7, 10, 0.95) 0%, rgba(10, 15, 20, 0.6) 50%, rgba(5, 7, 10, 0.95) 100%);
@@ -14,7 +14,7 @@
 .experience-crosshairs {
   max-width: var(--max-width);
   width: 100%;
-  margin: 0 auto 0.75rem auto;
+  margin: 0 auto 0.4rem auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +61,7 @@
 }
 
 .experience-terminal-header {
-  background-color: rgba(10, 15, 20, 0.98);
+  background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-panel);
   padding: 0.45rem 0.85rem;
   display: flex;
@@ -90,7 +90,7 @@
 
 .experience-terminal-body {
   padding: 1rem 1.25rem;
-  background-color: rgba(5, 7, 10, 0.88);
+  background-color: var(--bg-panel);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -139,8 +139,8 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.45rem 0.65rem;
-  background: rgba(13, 21, 27, 0.45);
-  border: 1px solid rgba(230, 237, 243, 0.06);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   font-size: 0.76rem;
 }
@@ -194,7 +194,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 4px 10px;
-  background: rgba(13, 21, 27, 0.8);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   color: var(--text-secondary);
@@ -414,7 +414,7 @@
 /* Primary Card Prominence (VIT-AP) */
 .card-primary {
   border: 1px solid rgba(25, 196, 200, 0.35);
-  background: linear-gradient(180deg, rgba(13, 21, 27, 0.95) 0%, rgba(9, 14, 18, 0.98) 100%);
+  background: var(--bg-panel);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(25, 196, 200, 0.08);
 }
 
@@ -579,8 +579,8 @@
 .recruiter-tag {
   font-size: 0.65rem;
   padding: 2px 7px;
-  background: rgba(13, 21, 27, 0.9);
-  border: 1px solid rgba(25, 196, 200, 0.2);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   color: var(--text-primary);
 }
@@ -674,8 +674,8 @@
 .tech-pill {
   font-size: 0.72rem;
   padding: 3px 8px;
-  background: rgba(5, 7, 10, 0.7);
-  border: 1px solid rgba(230, 237, 243, 0.09);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   color: var(--text-primary);
   transition: all var(--transition-fast);
@@ -691,8 +691,8 @@
    Metric Panels (ExperienceMetric.tsx)
    -------------------------------------------------------------------------- */
 .experience-metric-panel {
-  background: rgba(5, 7, 10, 0.8);
-  border: 1px solid rgba(25, 196, 200, 0.25);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   padding: 0.85rem 1.1rem;
   display: flex;
@@ -705,9 +705,9 @@
 .metric-large {
   min-width: 260px;
   padding: 1rem 1.3rem;
-  border-color: rgba(25, 196, 200, 0.4);
-  background: rgba(9, 16, 22, 0.9);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-border);
+  background: var(--bg-panel);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .metric-context {
@@ -772,7 +772,7 @@
    XDR Platform Architecture Visualizer (XDRArchitecture.tsx)
    -------------------------------------------------------------------------- */
 .xdr-architecture-wrapper {
-  background: rgba(5, 7, 10, 0.75);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-panel);
   border-radius: var(--radius-sm);
   padding: 1.15rem;
@@ -813,8 +813,8 @@
 
 /* SOC Status HUD Indicator Bar */
 .xdr-soc-hud {
-  background: rgba(10, 15, 20, 0.95);
-  border: 1px solid rgba(25, 196, 200, 0.18);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   padding: 0.55rem 0.85rem;
   display: flex;
@@ -844,8 +844,8 @@
   font-size: 0.66rem;
   font-weight: 700;
   padding: 2px 6px;
-  background: rgba(5, 7, 10, 0.8);
-  border: 1px solid rgba(230, 237, 243, 0.07);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   cursor: default;
 }
@@ -883,8 +883,8 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.65rem 0.9rem;
-  background: rgba(13, 21, 27, 0.9);
-  border: 1px solid rgba(230, 237, 243, 0.1);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   text-align: left;
   transition: all var(--transition-fast);
@@ -894,13 +894,13 @@
 .arch-node-box:hover,
 .arch-node-box.node-active {
   border-color: var(--accent-primary);
-  background: rgba(25, 196, 200, 0.08);
-  box-shadow: 0 0 12px rgba(25, 196, 200, 0.18);
+  background: var(--accent-dim);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .arch-node-primary {
-  border-color: rgba(25, 196, 200, 0.35);
-  background: rgba(16, 27, 36, 0.95);
+  border-color: var(--accent-border);
+  background: var(--bg-panel);
 }
 
 .arch-node-icon {
@@ -971,8 +971,8 @@
 .arch-response-stage {
   width: 100%;
   max-width: 480px;
-  background: rgba(10, 15, 20, 0.9);
-  border: 1px solid rgba(25, 196, 200, 0.25);
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
   border-radius: var(--radius-xs);
   padding: 0.75rem 0.85rem;
   display: flex;
@@ -1000,8 +1000,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.6rem;
-  background: rgba(5, 7, 10, 0.8);
-  border: 1px solid rgba(230, 237, 243, 0.06);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   text-align: left;
   transition: all var(--transition-fast);
@@ -1011,7 +1011,7 @@
 .arch-branch-leaf:hover,
 .arch-branch-leaf.node-active {
   border-color: var(--accent-primary);
-  background: rgba(25, 196, 200, 0.08);
+  background: var(--accent-dim);
 }
 
 .leaf-content {
@@ -1090,7 +1090,7 @@
    Network Routing Lab Architecture (NetworkArchitecture.tsx)
    -------------------------------------------------------------------------- */
 .network-architecture-wrapper {
-  background: rgba(5, 7, 10, 0.75);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-panel);
   border-radius: var(--radius-sm);
   padding: 1.15rem;
@@ -1151,8 +1151,8 @@
   align-items: center;
   gap: 0.65rem;
   padding: 0.65rem 0.8rem;
-  background: rgba(13, 21, 27, 0.9);
-  border: 1px solid rgba(230, 237, 243, 0.1);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
   text-align: left;
   cursor: pointer;
@@ -1162,8 +1162,8 @@
 .net-node-box:hover,
 .net-node-box.node-active {
   border-color: var(--accent-primary);
-  background: rgba(25, 196, 200, 0.08);
-  box-shadow: 0 0 10px rgba(25, 196, 200, 0.15);
+  background: var(--accent-dim);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .net-node-wide {

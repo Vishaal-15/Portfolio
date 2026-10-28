@@ -8,22 +8,22 @@ export const ProfileTerminal: React.FC = () => {
   return (
     <div className="about-terminal-window technical-bracket" aria-label="Academic Research Profile">
       {/* Title Bar */}
-      <div className="about-terminal-header font-mono">
+      <div className="about-terminal-header">
         <div className="about-terminal-title">
-          <BookOpen size={14} className="text-accent inline-icon" />
-          <span>ACADEMIC &amp; TECHNICAL BACKGROUND</span>
+          <BookOpen size={15} className="text-accent inline-icon" />
+          <span>Academic &amp; Research Background</span>
         </div>
         <div className="about-terminal-tag">
-          <Award size={12} className="text-accent inline-icon" />
-          <span>SECURITY INTERN</span>
+          <Award size={13} className="text-accent inline-icon" />
+          <span>Research Appointment</span>
         </div>
       </div>
 
       {/* Narrative Body */}
       <div className="about-terminal-body">
         {/* Academic Overview Header */}
-        <div className="about-narrative-intro font-mono">
-          <span className="text-accent">// BACKGROUND &amp; FOCUS:</span>
+        <div className="about-narrative-intro">
+          <span className="narrative-heading-label">Research Focus &amp; Objectives</span>
         </div>
 
         {/* Narrative Paragraphs */}
@@ -36,15 +36,15 @@ export const ProfileTerminal: React.FC = () => {
         </div>
 
         {/* Academic Coursework & Foundations Highlights */}
-        <div className="about-coursework-section font-mono">
+        <div className="about-coursework-section">
           <div className="coursework-header">
-            <span className="text-accent">// UNDERGRADUATE FOUNDATIONS &amp; RELEVANT COURSEWORK:</span>
+            <span className="narrative-heading-label">Foundations &amp; Relevant Coursework</span>
           </div>
           <div className="coursework-grid">
             {academicProfile.coursework.map((course) => (
               <div key={course.title} className="coursework-item">
                 <div className="coursework-head">
-                  <CheckCircle2 size={11} className="text-accent inline-icon" />
+                  <CheckCircle2 size={13} className="text-accent inline-icon" />
                   <span className="coursework-title">{course.title}</span>
                 </div>
                 <span className="coursework-relevance text-muted font-sans">{course.relevance}</span>

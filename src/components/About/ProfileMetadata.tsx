@@ -12,12 +12,11 @@ export const ProfileMetadata: React.FC = () => {
         {/* Card Header */}
         <div className="dossier-header">
           <div className="dossier-header-title">
-            <BookOpen size={14} className="text-accent" />
-            <span>PROFILE OVERVIEW</span>
+            <BookOpen size={15} className="text-accent" />
+            <span>Profile Overview</span>
           </div>
           <div className="dossier-status-pill">
-            <span className="pulse-dot" />
-            <span className="text-accent">ACTIVE</span>
+            <span className="text-accent">Summary</span>
           </div>
         </div>
 
@@ -30,7 +29,7 @@ export const ProfileMetadata: React.FC = () => {
               <span className="field-label text-muted">CURRENT ROLE</span>
             </div>
             <div className="field-value font-sans font-semibold text-primary">
-              Security Research Intern
+
             </div>
           </div>
 
@@ -93,17 +92,16 @@ export const ProfileMetadata: React.FC = () => {
       </div>
 
       {/* Engineering Principles Matrix Card */}
-      <div className="attributes-matrix-card technical-bracket font-mono" aria-label="Engineering Principles Matrix">
+      <div className="attributes-matrix-card technical-bracket" aria-label="Engineering Principles Matrix">
         <div className="attributes-header">
-          <Activity size={13} className="text-accent" />
-          <span className="attributes-title">// ENGINEERING &amp; SYSTEMS PRINCIPLES</span>
+          <Activity size={14} className="text-accent" />
+          <span className="attributes-title">Engineering &amp; Systems Principles</span>
         </div>
         <div className="attributes-list">
           {about.securityAttributes.map((attr) => (
             <div key={attr.label} className="attribute-row">
               <span className="attribute-label">{attr.label}</span>
               <div className="attribute-indicator">
-                <span className="pulse-dot mini-dot" />
                 <span className="attribute-status text-accent">{attr.status}</span>
               </div>
             </div>

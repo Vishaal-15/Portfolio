@@ -1,66 +1,53 @@
-/* Portrait Frame Stylesheet — Biometric Technical Frame */
+/* Portrait Frame Stylesheet — Clean, Professional Card */
 
 .portrait-wrapper {
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 360px;
   margin: 0 auto;
 }
 
-.portrait-container {
-  background-color: var(--bg-panel);
-  border: 1px solid rgba(25, 196, 200, 0.2);
-  border-radius: var(--radius-sm);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(25, 196, 200, 0.08);
-  overflow: hidden;
+/* Soft ambient teal/cyan glow behind photo */
+.portrait-ambient-glow {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background: radial-gradient(circle, rgba(25, 196, 200, 0.22) 0%, rgba(56, 189, 248, 0.12) 50%, transparent 75%);
+  filter: blur(36px);
+  z-index: 1;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.portrait-card {
   position: relative;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  z-index: 2;
+  background: var(--bg-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(25, 196, 200, 0.12);
+  transition: transform var(--transition-smooth), border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-.portrait-container:hover {
+.portrait-card:hover {
+  transform: translateY(-4px);
   border-color: rgba(25, 196, 200, 0.35);
-  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.9), 0 0 24px rgba(25, 196, 200, 0.14);
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(25, 196, 200, 0.2);
 }
 
-/* Header */
-.portrait-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.42rem 0.75rem;
-  background-color: rgba(10, 15, 20, 0.96);
-  border-bottom: 1px solid var(--border-panel);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-}
-
-.portrait-header-left {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--accent-primary);
-  font-weight: 600;
-}
-
-.portrait-header-icon {
-  color: var(--accent-primary);
-}
-
-.portrait-id-tag {
-  color: var(--text-muted);
-  font-size: 0.64rem;
-}
-
-/* Media Box */
-.portrait-media-box {
+.portrait-image-container {
   position: relative;
   width: 100%;
-  background-color: #030508;
+  aspect-ratio: 4 / 4.7;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 4 / 4.4;
+  background: #06090e;
 }
 
 .portrait-image {
@@ -69,135 +56,102 @@
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  filter: contrast(1.04) brightness(0.98);
+  filter: contrast(1.03) brightness(0.98);
   transition: transform var(--transition-smooth);
 }
 
-.portrait-container:hover .portrait-image {
-  transform: scale(1.015);
+.portrait-card:hover .portrait-image {
+  transform: scale(1.025);
 }
 
-/* Corner HUD Data Markers */
-.portrait-corner-marker {
+/* Subtle gradient at bottom for floating badge readability */
+.portrait-gradient-overlay {
   position: absolute;
-  font-size: 0.6rem;
-  color: rgba(93, 224, 221, 0.65);
-  background: rgba(5, 7, 10, 0.75);
-  padding: 2px 5px;
-  border-radius: 2px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(5, 7, 10, 0.85) 0%, rgba(5, 7, 10, 0.2) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Floating Identity & Affiliation Card */
+.portrait-floating-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
   display: flex;
   align-items: center;
-  gap: 3px;
-  pointer-events: none;
-  z-index: 4;
+  gap: 0.75rem;
+  padding: 0.75rem 0.95rem;
+  background: var(--bg-panel-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-panel);
+  border-radius: 12px;
+  box-shadow: var(--shadow-panel);
+  z-index: 5;
 }
 
-.portrait-corner-marker.top-left {
-  top: 6px;
-  left: 6px;
-  border-left: 1.5px solid var(--accent-primary);
-}
-
-.portrait-corner-marker.top-right {
-  top: 6px;
-  right: 6px;
-  border-right: 1.5px solid var(--accent-primary);
-}
-
-/* Scanning Beam Animation */
-@keyframes scanningBeam {
-  0% {
-    top: -2%;
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.75;
-  }
-  85% {
-    opacity: 0.75;
-  }
-  100% {
-    top: 102%;
-    opacity: 0;
-  }
-}
-
-.portrait-scanline-beam {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(25, 196, 200, 0.4) 20%,
-    rgba(93, 224, 221, 0.95) 50%,
-    rgba(25, 196, 200, 0.4) 80%,
-    transparent 100%
-  );
-  box-shadow: 0 0 10px rgba(25, 196, 200, 0.8), 0 0 20px rgba(25, 196, 200, 0.4);
-  pointer-events: none;
-  z-index: 3;
-  animation: scanningBeam 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Subtle texture overlay */
-.portrait-texture-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 0, 0, 0.12) 51%
-  );
-  background-size: 100% 3px;
-  opacity: 0.4;
-}
-
-/* Footer Telemetry */
-.portrait-footer {
+.badge-icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.48rem 0.85rem;
-  background-color: rgba(10, 15, 20, 0.96);
-  border-top: 1px solid var(--border-panel);
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(25, 196, 200, 0.12);
+  border: 1px solid rgba(25, 196, 200, 0.25);
+  flex-shrink: 0;
 }
 
-.footer-status-item {
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  overflow: hidden;
+}
+
+.badge-role {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge-org {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
 }
 
-.footer-status-val {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-weight: 700;
-}
-
-.inline-icon {
+.badge-pin-icon {
   color: var(--accent-primary);
+  flex-shrink: 0;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .portrait-wrapper {
-    max-width: 290px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .portrait-wrapper {
-    max-width: 270px;
-    margin: 0 auto;
+    max-width: 280px;
+  }
+  .portrait-floating-badge {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 0.6rem 0.8rem;
   }
 }

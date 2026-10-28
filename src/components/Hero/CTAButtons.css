@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.7rem 1.35rem;
-  background-color: rgba(13, 21, 27, 0.7);
+  background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 0.8rem;
   font-weight: 600;

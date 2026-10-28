@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.65rem 1rem;
-  background-color: rgba(5, 7, 10, 0.6);
+  background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-panel);
 }
 
@@ -89,8 +89,8 @@
   gap: 0.55rem;
   align-items: flex-start;
   padding: 0.5rem 0.65rem;
-  background: rgba(13, 21, 27, 0.45);
-  border: 1px solid rgba(230, 237, 243, 0.05);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-panel);
   border-radius: var(--radius-xs);
 }
 

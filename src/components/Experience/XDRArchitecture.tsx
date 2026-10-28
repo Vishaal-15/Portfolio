@@ -74,22 +74,21 @@ export const XDRArchitecture: React.FC = () => {
     <div className="xdr-architecture-wrapper" aria-label="VIT-AP Agentic SOC Platform Architecture">
       {/* Architecture Header & Legend */}
       <div className="xdr-arch-header">
-        <div className="xdr-arch-title font-mono">
-          <Activity size={14} className="text-accent" />
-          <span>AGENTIC SOC ARCHITECTURE · DATA FLOW SPECIFICATION</span>
+        <div className="xdr-arch-title">
+          <Activity size={15} className="text-accent" />
+          <span>Agentic SOC Architecture &amp; Data Pipeline</span>
         </div>
-        <div className="xdr-arch-badge font-mono">
-          <span>HIGH-PERFORMANCE INGEST</span>
+        <div className="xdr-arch-badge">
+          <span>High-Performance Ingestion</span>
         </div>
       </div>
 
-      {/* SOC Status HUD Indicator Bar */}
-      <div className="xdr-soc-hud font-mono" role="region" aria-label="System Architecture Status HUD">
-        <div className="soc-hud-label">// ARCHITECTURE SUBSYSTEMS:</div>
+      {/* SOC Status Subsystems Bar */}
+      <div className="xdr-soc-hud" role="region" aria-label="System Architecture Subsystems">
+        <div className="soc-hud-label">Subsystems:</div>
         <div className="soc-status-items">
           {socStatus.map((item) => (
             <div key={item.label} className="soc-status-badge" title={item.description}>
-              <span className="pulse-dot" aria-hidden="true" />
               <span className="soc-label">{item.label}</span>
               <span className="soc-val text-accent">{item.status}</span>
             </div>

@@ -3,7 +3,7 @@ import { ExperienceItem } from '../../config/portfolioData';
 import { XDRArchitecture } from './XDRArchitecture';
 import { NetworkArchitecture } from './NetworkArchitecture';
 import { ExperienceMetric } from './ExperienceMetric';
-import { ShieldCheck, Building, Calendar, Check, Layers, Terminal } from 'lucide-react';
+import { ShieldCheck, Building, Calendar, Check, Layers } from 'lucide-react';
 
 interface ExperienceCardProps {
   experience: ExperienceItem;
@@ -22,40 +22,34 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
       {/* Top Card Header Strip */}
       <div className="card-top-header">
         <div className="card-header-main">
-          <div className="order-badge font-mono">
-            <span className="order-prefix">//</span>
-            <span className="order-number">{experience.order}</span>
-          </div>
-
           <div className="title-block">
             <div className="role-and-status">
               <h3 id={`heading-${experience.id}`} className="experience-role-title">
                 {experience.role}
               </h3>
               {isCurrent ? (
-                <span className="status-pill status-current font-mono">
-                  <span className="pulse-dot" aria-hidden="true" />
-                  <span>● CURRENT</span>
+                <span className="status-pill status-current">
+                  <span>Current</span>
                 </span>
               ) : (
-                <span className="status-pill status-completed font-mono">
+                <span className="status-pill status-completed">
                   <Check size={11} className="text-accent" />
-                  <span>COMPLETED</span>
+                  <span>Completed</span>
                 </span>
               )}
             </div>
 
-            <div className="org-and-date font-mono">
+            <div className="org-and-date">
               <span className="org-name">
-                <Building size={12} className="inline-icon text-accent" />
+                <Building size={14} className="inline-icon text-accent" />
                 {experience.organization}
               </span>
               {experience.department && (
-                <span className="department-tag text-muted">[{experience.department}]</span>
+                <span className="department-tag text-muted">{experience.department}</span>
               )}
               <span className="period-divider text-muted">•</span>
               <span className="period-date text-accent">
-                <Calendar size={12} className="inline-icon text-accent" />
+                <Calendar size={13} className="inline-icon text-accent" />
                 {experience.period}
               </span>
             </div>
@@ -63,12 +57,12 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
         </div>
       </div>
 
-      {/* Recruiter-First Summary Banner (Primary Experience) */}
+      {/* Role Summary Banner */}
       {experience.recruiterSummary && (
-        <div className="recruiter-summary-banner technical-bracket font-mono" role="region" aria-label="Executive Technical Summary">
+        <div className="recruiter-summary-banner technical-bracket" role="region" aria-label="Executive Technical Summary">
           <div className="recruiter-banner-head">
             <ShieldCheck size={14} className="text-accent" />
-            <span className="recruiter-label">EXECUTIVE RECRUITER SUMMARY</span>
+            <span className="recruiter-label">Key Highlights</span>
           </div>
           <div className="recruiter-headline">{experience.recruiterSummary.headline}</div>
           <div className="recruiter-subhead">{experience.recruiterSummary.highlight}</div>
@@ -89,13 +83,13 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
           </p>
 
           <div className="card-bullets-block font-sans">
-            <div className="bullets-header font-mono">
-              <span className="text-accent">//</span> KEY CONTRIBUTIONS &amp; ENGINEERING SCOPE:
+            <div className="bullets-header">
+              Key Contributions &amp; Engineering Scope
             </div>
             <ul className="bullets-list">
               {experience.bullets.map((bullet, idx) => (
                 <li key={idx} className="bullet-item">
-                  <span className="bullet-indicator font-mono" aria-hidden="true">❯</span>
+                  <span className="bullet-indicator" aria-hidden="true">•</span>
                   <span className="bullet-text">{bullet}</span>
                 </li>
               ))}
@@ -111,8 +105,8 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
 
           {/* Tech Stack Pills */}
           <div className="card-stack-block">
-            <div className="stack-header font-mono">
-              <Layers size={12} className="text-accent" />
+            <div className="stack-header">
+              <Layers size={13} className="text-accent" />
               <span>TECHNOLOGY STACK</span>
             </div>
             <div className="stack-pills-list">
@@ -143,18 +137,6 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
             <NetworkArchitecture />
           </div>
         )}
-      </div>
-
-      {/* Card Footer Technical Status */}
-      <div className="card-footer-strip font-mono" aria-hidden="true">
-        <div className="footer-terminal-log">
-          <Terminal size={11} className="text-accent" />
-          <span className="terminal-user">vishaal@sec-lab:~$</span>
-          <span className="terminal-cmd">git log --stat --oneline -1 {experience.id}</span>
-        </div>
-        <div className="footer-status-tag">
-          <span>[VERIFIED_RECORD_{experience.order}]</span>
-        </div>
       </div>
     </article>
   );

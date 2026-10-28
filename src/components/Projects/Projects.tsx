@@ -17,52 +17,50 @@ export const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="projects-section" aria-label="Technical Projects and Open-Source Repositories">
-      {/* Top Ambient Banner */}
-      <div className="projects-crosshairs font-mono" aria-hidden="true">
-        <span className="crosshair-tag top-left">// SOFTWARE DEVELOPMENT &amp; OPEN-SOURCE PROJECTS</span>
-        <span className="crosshair-tag top-right">EMPIRICALLY VERIFIED BENCHMARKS</span>
-      </div>
-
       <div className="projects-container">
         {/* Section Header */}
         <div className="projects-section-header">
+          <div className="section-badge">
+            <FolderGit2 size={13} className="text-accent" />
+            <span>Featured Projects</span>
+          </div>
+
           <h2 className="section-main-title">
             Software Development <span className="text-accent">&amp;</span> Applied Cryptography
           </h2>
         </div>
 
-        {/* Executive Research Systems Overview Bar */}
-        <div className="projects-terminal-window technical-bracket" aria-label="Research Systems Overview">
-          <div className="projects-term-bar font-mono">
+        {/* Engineering Systems Overview Bar */}
+        <div className="projects-terminal-window technical-bracket" aria-label="Systems and Benchmarks Overview">
+          <div className="projects-term-bar">
             <div className="projects-term-title">
-              <FolderGit2 size={13} className="text-accent" />
-              <span>RESEARCH SYSTEMS &amp; BENCHMARKS INDEX</span>
+              <FolderGit2 size={14} className="text-accent" />
+              <span>Engineering Benchmarks &amp; Highlights</span>
             </div>
             <div className="projects-term-status">
-              <span className="pulse-dot" aria-hidden="true" />
-              <span className="text-accent">4 VERIFIED REPOSITORIES</span>
+              <span className="text-accent">4 Repositories</span>
             </div>
           </div>
 
-          <div className="projects-overview-grid font-mono">
+          <div className="projects-overview-grid">
             <div className="project-highlight-chip">
-              <span className="chip-metric text-accent">~95% ATTACK MITIGATION</span>
+              <span className="chip-metric text-accent">~95% Mitigation</span>
               <span className="chip-name">Secure Prompt Scorer</span>
               <span className="chip-desc text-muted">7-tier defense-in-depth LLM boundary</span>
             </div>
             <div className="project-highlight-chip">
-              <span className="chip-metric text-accent">2048-BIT SEMANTIC SECURITY</span>
-              <span className="chip-name">RSA-OAEP Cryptography</span>
+              <span className="chip-metric text-accent">2048-Bit RSA-OAEP</span>
+              <span className="chip-name">Applied Cryptography</span>
               <span className="chip-desc text-muted">Raw number theory vs PyCryptodome (100+ vectors)</span>
             </div>
             <div className="project-highlight-chip">
-              <span className="chip-metric text-accent">&lt;500MS LATENCY</span>
+              <span className="chip-metric text-accent">&lt;500ms Latency</span>
               <span className="chip-name">Price Prediction Engine</span>
               <span className="chip-desc text-muted">Full-stack regression pipeline (10,000+ records)</span>
             </div>
             <div className="project-highlight-chip">
-              <span className="chip-metric text-accent">88% ACCURACY (+12%)</span>
-              <span className="chip-name">Intelligent Crop Classifier</span>
+              <span className="chip-metric text-accent">88% Accuracy (+12%)</span>
+              <span className="chip-name">Crop Classifier</span>
               <span className="chip-desc text-muted">Cross-validated Random Forest agronomic model</span>
             </div>
           </div>

@@ -26,21 +26,8 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   };
 
   return (
-    <div className="project-filters-toolbar font-mono" role="toolbar" aria-label="Project category filters">
-      <div className="filter-command-prompt">
-        <span className="text-accent">vishaal@sec-lab:~$</span>
-        <span className="filter-cmd-display">
-          {activeCategory === 'all'
-            ? 'ls projects/ --all'
-            : `ls projects/ | grep -i "${activeCategory}"`}
-        </span>
-        <span className="filter-match-count text-muted">
-          [{filteredCount} MATCH{filteredCount === 1 ? '' : 'ES'}]
-        </span>
-      </div>
-
+    <div className="project-filters-toolbar" role="toolbar" aria-label="Project category filters">
       <div className="filter-buttons-container">
-        <span className="filter-label text-muted">// FILTER:</span>
         {categories.map((cat) => {
           const isActive = activeCategory === cat.id;
           return (
@@ -53,10 +40,13 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
             >
               {getCategoryIcon(cat.id)}
               <span>{cat.label}</span>
-              <span className="cat-count">[{cat.count}]</span>
+              <span className="cat-count">({cat.count})</span>
             </button>
           );
         })}
+        <span className="filter-summary-count text-muted">
+          Showing {filteredCount} {filteredCount === 1 ? 'project' : 'projects'}
+        </span>
       </div>
     </div>
   );

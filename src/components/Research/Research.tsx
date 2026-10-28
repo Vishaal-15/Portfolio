@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  FlaskConical, 
-  Radio, 
-  Lock, 
-  ShieldCheck, 
-  Cpu, 
-  Calendar, 
-  Building, 
+import {
+  FlaskConical,
+  Radio,
+  Lock,
+  ShieldCheck,
+  Cpu,
+  Calendar,
+  Building,
   ArrowUpRight,
   Sparkles
 } from 'lucide-react';
@@ -18,37 +18,35 @@ export const Research: React.FC = () => {
       <div className="research-container">
         {/* Section Header */}
         <div className="research-header">
-          <div className="research-badge font-mono">
-            <span className="text-accent">//</span> 04. RESEARCH
+          <div className="section-badge">
+            <FlaskConical size={13} className="text-accent" />
+            <span>Research &amp; Publications</span>
           </div>
           <h2 className="research-section-title">
             Research <span className="text-accent">&amp;</span> Publications
           </h2>
           <div className="research-divider" aria-hidden="true" />
           <p className="research-lead-text font-sans">
-            Investigating telemetry pipelines, applied cryptography, and threat-aware systems at the Centre of Excellence in Cyber Security (VIT-AP University).
+
           </p>
         </div>
 
         {/* 1. Primary Research Appointment Card */}
         <div className="research-primary-card" aria-label="Active Research Appointment">
           <div className="primary-card-top">
-            <div className="primary-card-badge-row font-mono">
-              <span className="appointment-badge">
-                <span className="pulse-dot" aria-hidden="true" />
-                ACTIVE APPOINTMENT
-              </span>
+            <div className="primary-card-badge-row">
+
               <span className="appointment-date text-muted">
                 <Calendar size={13} className="text-accent inline-icon" />
-                JUN 2026 — PRESENT
+                Jun 2026 — Present
               </span>
             </div>
 
-            <h3 className="appointment-role font-mono">
+            <h3 className="appointment-role">
               Cybersecurity Research Intern
             </h3>
 
-            <div className="appointment-institution font-mono text-secondary">
+            <div className="appointment-institution text-secondary">
               <Building size={14} className="text-accent inline-icon" />
               <span>Centre of Excellence in Cyber Security · VIT-AP University</span>
             </div>
@@ -61,21 +59,21 @@ export const Research: React.FC = () => {
           {/* Clean Bullet List */}
           <div className="appointment-bullets-list font-sans">
             <div className="bullet-row">
-              <span className="bullet-arrow font-mono text-accent">&gt;</span>
+              <span className="bullet-arrow text-accent">•</span>
               <div className="bullet-content">
                 <strong className="text-primary">Real-Time Telemetry Pipeline:</strong> Built an asynchronous data ingestion tier using Apache Kafka and FastAPI to handle continuous security event streams.
               </div>
             </div>
 
             <div className="bullet-row">
-              <span className="bullet-arrow font-mono text-accent">&gt;</span>
+              <span className="bullet-arrow text-accent">•</span>
               <div className="bullet-content">
                 <strong className="text-primary">High-Speed Log Querying:</strong> Configured Elasticsearch indexing and Redis session caching for fast, paginated querying across large event logs.
               </div>
             </div>
 
             <div className="bullet-row">
-              <span className="bullet-arrow font-mono text-accent">&gt;</span>
+              <span className="bullet-arrow text-accent">•</span>
               <div className="bullet-content">
                 <strong className="text-primary">Automated Incident Triage:</strong> Integrated MITRE ATT&amp;CK taxonomy alignment with automated ticket escalation in Jira/ServiceNow and browser isolation using Kasm RBI.
               </div>
@@ -97,9 +95,9 @@ export const Research: React.FC = () => {
 
         {/* 2. Core Research Domains Grid */}
         <div className="research-domains-section">
-          <div className="domains-heading-row font-mono">
-            <span className="text-accent">// FOCUS AREAS</span>
-            <span className="text-muted">4 DOMAINS</span>
+          <div className="domains-heading-row">
+            <span className="domains-heading-title">Core Research Focus</span>
+            <span className="text-muted">4 Domains</span>
           </div>
 
           <div className="research-cards-grid">
@@ -183,15 +181,15 @@ export const Research: React.FC = () => {
 
         {/* 3. Working Papers Card */}
         <div className="research-paper-card" aria-label="Working Paper and Manuscript">
-          <div className="paper-card-top font-mono">
+          <div className="paper-card-top">
             <div className="paper-status-pill">
-              <FlaskConical size={13} className="text-accent inline-icon" />
-              <span>WORKING PAPER // IN PREPARATION</span>
+              <FlaskConical size={14} className="text-accent inline-icon" />
+              <span>Working Paper · In Preparation</span>
             </div>
             <span className="paper-year text-muted">2026</span>
           </div>
 
-          <h3 className="paper-title font-mono">
+          <h3 className="paper-title">
             Architecture and Evaluation of an Agentic SOC Platform for Real-Time Security Telemetry and Automated Triage
           </h3>
 

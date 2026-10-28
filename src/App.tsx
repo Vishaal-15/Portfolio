@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar/Navbar';
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
@@ -11,28 +12,29 @@ import { Footer } from './components/Footer/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="portfolio-app-root">
-      {/* Background ambient technical grid & scanline texture */}
-      <div className="bg-grid-overlay" aria-hidden="true" />
-      <div className="bg-scanline-ambient" aria-hidden="true" />
+    <ThemeProvider>
+      <div className="portfolio-app-root">
+        {/* Subtle modern ambient background mesh */}
+        <div className="bg-grid-overlay" aria-hidden="true" />
 
-      {/* Fixed Sticky Header */}
-      <Navbar />
+        {/* Fixed Sticky Header */}
+        <Navbar />
 
-      {/* Main Content Area */}
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Research />
-        <Skills />
-        <Contact />
-      </main>
+        {/* Main Content Area */}
+        <main id="main-content">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Research />
+          <Skills />
+          <Contact />
+        </main>
 
-      {/* Final Footer Section */}
-      <Footer />
-    </div>
+        {/* Final Footer Section */}
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

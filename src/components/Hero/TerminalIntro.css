@@ -16,7 +16,7 @@
 
 /* Header */
 .terminal-header {
-  background-color: rgba(10, 15, 20, 0.95);
+  background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-panel);
   padding: 0.42rem 0.75rem;
   display: flex;
@@ -99,7 +99,7 @@
   padding: 0.65rem 0.95rem 0.75rem 0.95rem;
   font-size: 0.78rem;
   line-height: 1.5;
-  background-color: rgba(5, 7, 10, 0.85);
+  background-color: var(--bg-panel);
   min-height: 128px;
 }
 
