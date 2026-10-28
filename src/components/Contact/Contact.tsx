@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
           </h2>
 
           <p className="contact-description font-sans">
-            Whether you have an inquiry, an opportunity, or want to collaborate on cybersecurity, systems research, and software engineering, my inbox is open. I&apos;ll get back to you promptly.
+            Whether you have a question, a project proposal, or just want to discuss the latest in cybersecurity and ethical hacking, my inbox is open. I&apos;ll get back to you as soon as possible.
           </p>
         </div>
 

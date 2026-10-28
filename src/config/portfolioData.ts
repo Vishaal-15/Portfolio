@@ -325,7 +325,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
     github: "https://github.com/Vishaal-15",
     terminalUser: "vishaal",
     terminalHost: "sec-lab",
-    description: "I'd love to connect and discuss opportunities, projects, or ideas around cybersecurity and technology.",
+    description: "Whether you have a question, a project proposal, or just want to discuss the latest in cybersecurity and ethical hacking, my inbox is open. I'll get back to you as soon as possible.",
     ctaText: "LET'S CONNECT",
     copyright: "© 2026 Vishaal A K. All rights reserved.",
     tagline: "Cybersecurity • Software Engineering • Machine Learning"
